@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local env（若日后加构建脚本）
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*

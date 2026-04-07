@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="AIGC 视频创作者 — 概念片、商业影像与生成式工作流案例" />
+    <title>AIGC 影像 · 作品集</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo" href="#">Signal<span>Frame</span></a>
+        <nav class="nav-main" aria-label="页面导航">
+          <a href="#showreel">案例视频</a>
+          <a href="#work">项目</a>
+          <a href="#about">关于</a>
+          <a href="#contact">联系</a>
+        </nav>
+        <div class="header-actions">
+          <button
+            type="button"
+            class="icon-btn"
+            id="theme-toggle"
+            aria-label="切换配色主题"
+          >
+            <svg class="hidden" data-icon="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+            </svg>
+            <svg data-icon="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="top" class="section hero" aria-labelledby="hero-title">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="hero-badge reveal-static">AIGC · Generative Video</p>
+            <h1 id="hero-title" class="reveal-static">把想象<br /><span class="accent">推进成片</span></h1>
+            <p class="hero-lead reveal-static">
+              专注 AIGC 影像：从概念、分镜到生成式合成与后期，服务品牌片、MV、预告与实验短片。下面是可播放案例与完整项目说明 — 欢迎点击播放或展开详情。
+            </p>
+            <div class="hero-cta reveal-static">
+              <a class="btn btn-primary" href="#showreel">观看案例</a>
+              <a class="btn btn-ghost" href="#contact">委托合作</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-scroll" aria-hidden="true">
+          <span class="hero-scroll-line"></span>
+          Scroll
+        </div>
+      </section>
+
+      <section id="showreel" class="section video-section" aria-labelledby="showreel-title">
+        <div class="section-head">
+          <div>
+            <p class="section-label" id="showreel-label">Showreel</p>
+            <h2 id="showreel-title">案例视频</h2>
+          </div>
+          <p>嵌入你常用的平台链接（YouTube / Vimeo / Bilibili 等）。在 <code>main.js</code> 的 <code>videos</code> 里填写 <code>embedUrl</code> 即可替换演示片。</p>
+        </div>
+        <div class="filters" id="video-filters" role="toolbar" aria-label="视频分类筛选"></div>
+        <div class="video-grid" id="video-grid"></div>
+      </section>
+
+      <section id="work" class="section" aria-labelledby="work-title">
+        <div class="section-head">
+          <div>
+            <p class="section-label" id="work-label">Projects</p>
+            <h2 id="work-title">制作项目</h2>
+          </div>
+          <p>按委托类型浏览：从创意生成到实拍合成与交付规格，点击卡片阅读幕后流程。</p>
+        </div>
+        <div class="filters" id="filters" role="toolbar" aria-label="项目分类筛选"></div>
+        <div class="project-grid" id="project-grid"></div>
+      </section>
+
+      <section id="about" class="section" aria-labelledby="about-title">
+        <h2 id="about-title" class="section-label">About</h2>
+        <div class="about-grid">
+          <div class="about-prose reveal-static">
+            <h2>生成式工作流，电影级纪律</h2>
+            <p>
+              我相信 AIGC 的价值在于「可控的偶然」：用模型探索画面可能性，用剪辑与调色把它收束成叙事。工作流里会明确参考审美、角色一致性与镜头语法，而不是堆砌特效。
+            </p>
+            <p>
+              本页为静态展示，视频区使用 iframe 嵌入；若你开启系统的「减少动态效果」，页面会自动减弱动画与扫描线，保证阅读舒适。
+            </p>
+          </div>
+          <div class="stat-board reveal-static" aria-label="创作数据概览">
+            <div class="stat">
+              <div class="stat-value">4K</div>
+              <div class="stat-label">常规交付分辨率</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">HDR</div>
+              <div class="stat-label">可选调色与母带</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">∞</div>
+              <div class="stat-label">迭代与版本管理</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">24h</div>
+              <div class="stat-label">通常首次回复时效</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <div class="contact-inner">
+        <div class="contact-lead reveal-static">
+          <h2 id="contact-title">聊聊你的下一条片</h2>
+          <p>附上参考链接、档期与预算区间，说明是否需要实拍合成或纯生成。邮件或社媒均可，看到就会回。</p>
+        </div>
+        <div class="social-row reveal-static">
+          <a href="mailto:hello@example.com" aria-label="发送邮件">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+          </a>
+          <a href="https://www.youtube.com" rel="noopener noreferrer" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+              <path d="m10 15 5-3-5-3z" />
+            </svg>
+          </a>
+          <a href="https://vimeo.com" rel="noopener noreferrer" aria-label="Vimeo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 8.35V16a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8.35A4 4 0 0 1 6 4h12a4 4 0 0 1 4 4Z" />
+              <path d="m9 10 4 2-4 2v-4Z" />
+            </svg>
+          </a>
+          <a href="https://www.bilibili.com" rel="noopener noreferrer" aria-label="哔哩哔哩">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect width="20" height="14" x="2" y="5" rx="2" />
+              <path d="m10 9 4 3-4 3V9Z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <span>© <span id="y"></span> SignalFrame · AIGC 视频</span>
+      <span>青绿信号 × 琥珀点缀 · 非蓝紫套系</span>
+    </footer>
+
+    <div
+      id="video-modal"
+      class="modal-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-labelledby="video-modal-title"
+    >
+      <div class="modal modal--video">
+        <div class="modal-header">
+          <h3 id="video-modal-title"></h3>
+          <button type="button" class="modal-close" id="video-modal-close" aria-label="关闭视频">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="video-frame-wrap"></div>
+          <div class="modal-tags" id="video-modal-tags"></div>
+          <p id="video-modal-desc"></p>
+          <div class="modal-actions">
+            <a class="btn btn-primary" href="#contact">预约合作</a>
+            <button type="button" class="btn btn-ghost" id="video-modal-close-secondary">关闭</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="project-modal"
+      class="modal-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal">
+        <div class="modal-header">
+          <h3 id="modal-title"></h3>
+          <button type="button" class="modal-close" id="modal-close" aria-label="关闭对话框">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-preview" id="modal-preview" role="img" aria-hidden="true"></div>
+          <div class="modal-tags" id="modal-tags"></div>
+          <div id="modal-text"></div>
+          <div class="modal-actions">
+            <a class="btn btn-primary" href="#contact">预约沟通</a>
+            <button type="button" class="btn btn-ghost" id="modal-close-secondary">关闭</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+      document.getElementById("modal-close-secondary").addEventListener("click", function () {
+        document.getElementById("modal-close").click();
+      });
+      document.getElementById("video-modal-close-secondary").addEventListener("click", function () {
+        document.getElementById("video-modal-close").click();
+      });
+    </script>
+    <script src="main.js"></script>
+  </body>
+</html>
