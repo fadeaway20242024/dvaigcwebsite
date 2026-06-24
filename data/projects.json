@@ -1,0 +1,586 @@
+[
+  {
+    "id": "p1",
+    "title": "驭风而行",
+    "category": "ai-ad",
+    "tags": [
+      "TVC",
+      "Cinematic",
+      "Porsche"
+    ],
+    "desc": "2026款911 carrera创意广告短片",
+    "long": "首个案例示例已替换为你提供的新片场作品入口。当前模板采用封面图 + 项目说明 + 弹窗外链跳转，先不改为胶囊形态。后续你只需要继续替换每个项目的封面、标题与链接即可。",
+    "gradient": "linear-gradient(135deg, #0a0c1b 0%, #1f3f46 48%, #4fb39f 100%)",
+    "posterUrl": "public/images/project-1-cover.png",
+    "previewVideoUrl": "",
+    "embedUrl": "https://www.xinpianchang.com/a13724377?from=UserProfile",
+    "externalUrl": "https://www.xinpianchang.com/a13724377?from=UserProfile",
+    "caseStudy": {
+      "kicker": "AIGC Creative Video",
+      "title": "驭风而行",
+      "titleEn": "2026款911 Carrera创意广告短片",
+      "decor": "风",
+      "index": "01",
+      "videoUrl": "",
+      "videoPoster": "public/images/project-1-cover.png",
+      "intro": "本片以“Ride the Wind”为创意概念，通过AIGC技术构建完整的品牌视觉叙事。以绿宝石的稀有质感，隐喻 Porsche 911 Carrera 的经典设计语言，从静态线条展示到动态驰骋，从工业美学到自然风景，打造兼具奢华感、速度感与电影质感的品牌短片。全片聚焦光线、反射与运动轨迹，以现代广告影像语言重新诠释经典跑车的永恒魅力。",
+      "meta": [
+        {
+          "label": "Format",
+          "value": "16:9"
+        },
+        {
+          "label": "Genre",
+          "value": "AI广告·汽车TVC"
+        },
+        {
+          "label": "Year",
+          "value": "2025"
+        },
+        {
+          "label": "AI PLATFORM",
+          "value": "Gemini / Midjourney / Nano banana / Lovart / Ji meng"
+        }
+      ],
+      "gallery": [
+        "public/images/project-1-still-01.png",
+        "public/images/project-1-still-02.png",
+        "public/images/project-1-still-03.png",
+        "public/images/project-1-still-04.png",
+        "public/images/project-1-still-05.png",
+        "public/images/project-1-still-06.png",
+        "public/images/project-1-still-07.png",
+        "public/images/project-1-still-08.png",
+        "public/images/project-1-still-09.png"
+      ],
+      "cards": [
+        {
+          "title": "Project Background",
+          "body": "一支兼顾品牌调性与性能表达的短片，目标是快速建立车型记忆点，并适配社媒传播。"
+        },
+        {
+          "title": "Design Goal",
+          "body": "在有限时长内完成“车型识别 + 氛围情绪 + 速度冲击”三层信息，提升首帧吸引与完整观看率。"
+        },
+        {
+          "title": "Process",
+          "body": "先做分镜头节奏预演，再结合商业汽车TVC表现手法，运用大量首尾帧运镜；后期通过色彩统一与运动模糊控制，体现美感与速度感。"
+        },
+        {
+          "title": "Output",
+          "body": "交付横版主片与多平台裁切版本，保证品牌视觉统一，并保留二次剪辑所需的高质量素材空间。"
+        }
+      ],
+      "galleryAspect": "16:9"
+    }
+  },
+  {
+    "id": "p4",
+    "title": "米其林时光旅行",
+    "category": "ai-short",
+    "tags": [
+      "米其林",
+      "社媒宣发"
+    ],
+    "desc": "社媒宣发创意短片",
+    "long": "多模型出图后统一色彩分级；风与布的动态用实拍素材混合生成补帧，避免塑料感。",
+    "gradient": "linear-gradient(135deg, #101528 0%, #2a3868 50%, #ffaa33 100%)",
+    "posterUrl": "public/images/project-4-cover.png",
+    "previewVideoUrl": "",
+    "embedUrl": "",
+    "caseStudy": {
+      "kicker": "AIGC Creative Video",
+      "title": "米其林时光旅行社媒宣发创意短片",
+      "titleEn": "",
+      "decor": "",
+      "videoUrl": "",
+      "videoPoster": "public/images/project-4-cover.png",
+      "intro": "本案例为配合米其林复古盲盒的宣发，所制作的社媒宣发创意短片，以复古动画视觉元素展现米其林轮胎先生百年文化，复刻不同时期形象，实现1:1视觉还原，适配社媒传播。",
+      "meta": [
+        {
+          "label": "Format",
+          "value": "竖版 9:16"
+        },
+        {
+          "label": "Genre",
+          "value": "AI短片·广告"
+        },
+        {
+          "label": "Year",
+          "value": "2026"
+        },
+        {
+          "label": "AI PLATFORM",
+          "value": ""
+        }
+      ],
+      "gallery": [
+        "public/images/project-4-still-01.png",
+        "public/images/project-4-still-02.png",
+        "public/images/project-4-still-03.png",
+        "public/images/project-4-still-04.png",
+        "public/images/project-4-still-05.png",
+        "public/images/project-4-still-06.png",
+        "public/images/project-4-still-07.png",
+        "public/images/project-4-still-08.png"
+      ],
+      "cards": [
+        {
+          "title": "Project Background",
+          "body": "为配合米其林复古盲盒推出，以复古动画视觉元素呈现米其林轮胎先生百年文化，打造沉浸式视觉体验。"
+        },
+        {
+          "title": "Design Goal",
+          "body": "生动复刻不同时期米其林轮胎先生形象，以复古质感与动态细节实现1:1视觉还原，适配社媒传播诉求。"
+        },
+        {
+          "title": "Process",
+          "body": "建立不同时期角色与场景资产，以agent+seedance 2组合实现各个时期动画演绎"
+        },
+        {
+          "title": "Output",
+          "body": "输出9:16竖版成片，适配社媒传播场景，呈现复古卡通风格与动态细节"
+        }
+      ],
+      "galleryAspect": "9:16"
+    },
+    "externalUrl": "https://www.xinpianchang.com/a13727151?from=UserProfile"
+  },
+  {
+    "id": "p2",
+    "title": "HOCH汉堡节",
+    "category": "ai-live-action",
+    "tags": [
+      "AI+实拍",
+      "IP宣发"
+    ],
+    "desc": "2026华润·金陵天地（南京站）IP宣发片",
+    "long": "音乐结构映射镜头重复与变形；AIGC 负责纹理与天空盒迭代，手工修补人物边缘与手持抖动。",
+    "gradient": "linear-gradient(125deg, #0c1020 0%, #243060 46%, #ffb85e 100%)",
+    "posterUrl": "public/images/project-2-cover.png",
+    "previewVideoUrl": "",
+    "embedUrl": "https://player.vimeo.com/video/148751763",
+    "caseStudy": {
+      "kicker": "AIGC Creative Video",
+      "title": "HOCH\n汉堡节·南京站",
+      "titleEn": "2026华润·金陵天地IP活动推广片",
+      "decor": "",
+      "index": "02",
+      "videoUrl": "",
+      "videoPoster": "public/images/project-2-cover.png",
+      "intro": "2026年HOCH汉堡节南京站IP活动推广，以卡通汉堡人IP为核心，结合南京地标，打造年轻受众节日氛围。AI结合实拍打造卡通化视觉风格，高效低成本推广，强化品牌记忆与传播。",
+      "meta": [
+        {
+          "label": "Format",
+          "value": "横版 · 16:9"
+        },
+        {
+          "label": "Genre",
+          "value": "AI+实拍短片·IP宣传推广片"
+        },
+        {
+          "label": "Year",
+          "value": "2026"
+        },
+        {
+          "label": "AI PLATFORM",
+          "value": "Gemini / Midjourney / Nano banana 2 / Tapnow / Ji meng"
+        }
+      ],
+      "gallery": [
+        "public/images/project-2-still-01.png",
+        "public/images/project-2-still-02.png",
+        "public/images/project-2-still-03.png",
+        "public/images/project-2-still-04.png",
+        "public/images/project-2-still-05.png",
+        "public/images/project-2-still-06.png",
+        "public/images/project-2-still-07.png",
+        "public/images/project-2-still-08.png",
+        "public/images/project-2-still-09.png"
+      ],
+      "cards": [
+        {
+          "title": "Project Background",
+          "body": "客户需在活动物料前，以卡通汉堡人IP串联南京地标，契合年轻审美打造宣传攻势，预热HOCH汉堡节南京站。"
+        },
+        {
+          "title": "Design Goal",
+          "body": "以AI结合实拍打造卡通化视觉风格，高效低成本推广IP，强化品牌记忆与传播效果。"
+        },
+        {
+          "title": "Process",
+          "body": "1天实拍+3天AIGC制作，写实动画风格，通过技术处理,真实再现IP形象与材质的一致性,与实拍内容完美融合一体"
+        },
+        {
+          "title": "Output",
+          "body": "输出横版16:9的短片，作为HOCH汉堡节南京站IP活动的宣传推广内容，通过强烈视觉效果和欢快节奏，形成当月全市宣传热点"
+        }
+      ],
+      "galleryAspect": "16:9"
+    },
+    "externalUrl": "https://www.xinpianchang.com/a13724981?from=UserProfile"
+  },
+  {
+    "id": "p6",
+    "title": "Foto Cube",
+    "category": "ai-ecommerce",
+    "tags": [
+      "跨境",
+      "电商"
+    ],
+    "desc": "智能电子日历跨境电商广告",
+    "long": "循环点做交叉淡化；亮度按现场照度校准；提供工程版 ProRes 与 HAP 备选方案。",
+    "gradient": "linear-gradient(135deg, #0c1020 0%, #243468 50%, #f0a040 100%)",
+    "posterUrl": "public/images/project-6-cover.png",
+    "previewVideoUrl": "",
+    "embedUrl": "",
+    "caseStudy": {
+      "kicker": "AIGC Creative Video",
+      "title": "FotoCube",
+      "titleEn": "智能电子日历海外广告",
+      "decor": "",
+      "videoUrl": "",
+      "videoPoster": "public/images/project-6-cover.png",
+      "intro": "针对海外电商场景，本项目通过AI技术视觉呈现，强调产品便捷性与科技感。设计目标是以温馨家居为背景，展现智能电子日历的便捷性和多样化使用场景，省去场景、外模等，大幅节约实拍成本。",
+      "meta": [
+        {
+          "label": "Format",
+          "value": "16:9"
+        },
+        {
+          "label": "Genre",
+          "value": "AI广告·跨境电商"
+        },
+        {
+          "label": "Year",
+          "value": "2026"
+        },
+        {
+          "label": "AI PLATFORM",
+          "value": "Gemini / Midjourney / Nano banana 2 / Tapnow / Jimeng"
+        }
+      ],
+      "gallery": [
+        "public/images/project-6-still-01.png",
+        "public/images/project-6-still-03.png",
+        "public/images/project-6-still-02.png",
+        "public/images/project-6-still-04.png",
+        "public/images/project-6-still-09.png",
+        "public/images/project-6-still-08.png",
+        "public/images/project-6-still-07.png",
+        "public/images/project-6-still-06.png",
+        "public/images/project-6-still-05.png"
+      ],
+      "galleryAspect": "16:9",
+      "cards": [
+        {
+          "title": "Project Background",
+          "body": "针对海外电商场景，以智能电子日历替代传统纸质日历，通过AI技术优化家庭日程管理体验，突出产品便捷性与科技感。"
+        },
+        {
+          "title": "Design Goal",
+          "body": "以温馨家居与使用场景，展现智能电子日历便捷性，对比传统日历，传递科技融入生活诉求，达成视觉舒适功能突出的效果。"
+        },
+        {
+          "title": "Process",
+          "body": "通过AIGC生成角色人物与场景资产，保持产品一致性，并通过后期微调产品文字等细节"
+        },
+        {
+          "title": "Output",
+          "body": "交付16:9智能电子日历广告成片，适配家庭等生活场景。"
+        }
+      ]
+    },
+    "externalUrl": "https://www.xinpianchang.com/a13727892"
+  },
+  {
+    "id": "p7",
+    "title": "“烬”",
+    "category": "style-experiment",
+    "tags": [
+      "赛博武侠"
+    ],
+    "desc": "赛博武侠风实验片段",
+    "long": "HDR 环境贴图与多通道输出；生成纹理与实拍底图在 Nuke 里对齐法线与高光，保证电商主图与竖版素材同源。",
+    "gradient": "linear-gradient(145deg, #101528 0%, #2c3f78 44%, #ffb060 100%)",
+    "posterUrl": "public/images/project-7-cover.png",
+    "previewVideoUrl": "",
+    "embedUrl": "",
+    "caseStudy": {
+      "kicker": "AIGC Creative Video",
+      "title": "“烬”",
+      "titleEn": "赛博武侠风实验片段",
+      "decor": "",
+      "videoUrl": "",
+      "videoPoster": "public/images/project-7-cover.png",
+      "intro": "赛博武侠风格实验视频，融合传统服饰与科幻光剑，探索视觉风格碰撞，结合GPT2生成角色与分镜，呈现未来感与古典美并存的艺术效果。",
+      "meta": [
+        {
+          "label": "Format",
+          "value": "16:9"
+        },
+        {
+          "label": "Genre",
+          "value": "视觉探索"
+        },
+        {
+          "label": "Year",
+          "value": "2026"
+        },
+        {
+          "label": "AI PLATFORM",
+          "value": "Gemini / Midjourney / GPT 2 / Tapnow / Jimeng"
+        }
+      ],
+      "gallery": [
+        "public/images/project-7-still-01.png",
+        "public/images/project-7-still-02.png",
+        "public/images/project-7-still-03.png",
+        "public/images/project-7-still-05.png",
+        "public/images/project-7-still-04.png",
+        "public/images/project-7-still-06.png",
+        "public/images/project-7-still-07.png",
+        "public/images/project-7-still-09.png",
+        "public/images/project-7-still-08.png"
+      ],
+      "galleryAspect": "16:9",
+      "cards": [
+        {
+          "title": "Project Background",
+          "body": "项目以赛博武侠为题材，融合传统服饰与科幻光剑，探索风格实验的视觉表达。"
+        },
+        {
+          "title": "Design Goal",
+          "body": "以赛博武侠风格融合传统服饰与未来光效，探索风格碰撞的视觉可能性，呈现未来感与古典美并存的实验效果。"
+        },
+        {
+          "title": "Process",
+          "body": "AIGC生成纹理与实拍底图，GPT2生成人物角色卡和故事分镜卡，融合赛博光剑与传统武侠元素。"
+        },
+        {
+          "title": "Output",
+          "body": "16:9 横版输出"
+        }
+      ]
+    },
+    "externalUrl": "https://www.xinpianchang.com/a13724764?from=UserProfile"
+  },
+  {
+    "id": "p5",
+    "title": "马上百威，马年有奔头",
+    "category": "ai-ad",
+    "tags": [
+      "Budweiser",
+      "新年"
+    ],
+    "desc": "Budweiser 啤酒新年创意短片",
+    "long": "平台 A/B 测试两版片头；生成背景与 UI 录屏对齐安全区；输出含无字幕净版。",
+    "gradient": "linear-gradient(135deg, #0a0c1b 0%, #1f2f5c 52%, #ff8c00 100%)",
+    "posterUrl": "public/images/project-5-cover.png",
+    "previewVideoUrl": "",
+    "embedUrl": "",
+    "caseStudy": {
+      "kicker": "AIGC Creative Video",
+      "title": "Budweiser啤酒\n新年创意短片",
+      "titleEn": "马上百威，马年有奔头",
+      "decor": "",
+      "videoUrl": "",
+      "videoPoster": "public/images/project-5-cover.png",
+      "intro": "为Budweiser马年新年创意短片，以红色为主调，融合动感镜头，传递‘马上百威，马年有奔头’祝福，强化品牌喜庆形象。AIGC技术生成新年背景，实物复刻与多场景结合，动态镜头展现啤酒质感和品牌活力。",
+      "meta": [
+        {
+          "label": "Format",
+          "value": "16:9"
+        },
+        {
+          "label": "Genre",
+          "value": "AI广告"
+        },
+        {
+          "label": "Year",
+          "value": "2026"
+        },
+        {
+          "label": "AI PLATFORM",
+          "value": "Gemini / Midjourney / Nano banana 2 / Tapnow / Jimeng"
+        }
+      ],
+      "gallery": [
+        "public/images/project-5-still-01.jpeg",
+        "public/images/project-5-still-02.jpeg",
+        "public/images/project-5-still-03.png",
+        "public/images/project-5-still-04.jpeg",
+        "public/images/project-5-still-05.png",
+        "public/images/project-5-still-06.png",
+        "public/images/project-5-still-07.png",
+        "public/images/project-5-still-08.jpeg",
+        "public/images/project-5-still-09.jpeg"
+      ],
+      "galleryAspect": "16:9",
+      "cards": [
+        {
+          "title": "Project Background",
+          "body": "基于马年新年营销语境，以Budweiser啤酒为核心视觉，传递‘马上百威，马年有奔头“话题"
+        },
+        {
+          "title": "Design Goal",
+          "body": "以红色为主调，结合动感镜头营造节日氛围，传递‘马上百威，马年有奔头’的新年祝福，强化品牌与喜庆的关联，引发情感共鸣。"
+        },
+        {
+          "title": "Process",
+          "body": "AIGC生成新年氛围背景，实物资产复刻结合多场景表现，尤其啤酒质感展现，剪辑动态镜头呈现品牌活力。"
+        },
+        {
+          "title": "Output",
+          "body": "交付16:9规格成片，无字幕净版，画面以红金色调与动态镜头呈现。"
+        }
+      ]
+    },
+    "externalUrl": "https://www.xinpianchang.com/a13724808?from=UserProfile"
+  },
+  {
+    "id": "p3",
+    "title": "欧恩贝",
+    "category": "ai-ecommerce",
+    "tags": [
+      "电商",
+      "广告"
+    ],
+    "desc": "奶粉电商广告视频",
+    "long": "粒子系统与生成海洋素材分层合成；字幕安全区与播出版本字幕流单独导出。",
+    "gradient": "linear-gradient(160deg, #0a0c1b 0%, #1e2d58 42%, #e8741a 100%)",
+    "posterUrl": "public/images/project-3-cover.png",
+    "previewVideoUrl": "",
+    "embedUrl": "",
+    "externalUrl": "https://www.xinpianchang.com/a13724774?from=UserProfile",
+    "caseStudy": {
+      "kicker": "AIGC Creative Video",
+      "title": "欧恩贝奶粉\n电商广告视频",
+      "titleEn": "",
+      "decor": "",
+      "videoUrl": "",
+      "videoPoster": "public/images/project-3-cover.png",
+      "intro": "为欧恩贝奶粉新品上市，制作温馨家庭场景的AI电商广告。采用暖色调营造氛围，高效传递产品卖点，通过agent+seedance 2.0技术合成粒子海洋与产品素材，最终交付横版16:9成片",
+      "meta": [
+        {
+          "label": "Format",
+          "value": "16:9"
+        },
+        {
+          "label": "Genre",
+          "value": "AI电商·广告"
+        },
+        {
+          "label": "Year",
+          "value": "2026"
+        },
+        {
+          "label": "AI PLATFORM",
+          "value": "Gemini / Midjourney / Nano banana 2 / Tapnow / Jimeng"
+        }
+      ],
+      "gallery": [
+        "public/images/project-3-still-01.png",
+        "public/images/project-3-still-02.png",
+        "public/images/project-3-still-03.png",
+        "public/images/project-3-still-04.png",
+        "public/images/project-3-still-05.png",
+        "public/images/project-3-still-06.png",
+        "public/images/project-3-still-07.png",
+        "public/images/project-3-still-08.png",
+        "public/images/project-3-still-09.png"
+      ],
+      "cards": [
+        {
+          "title": "Project Background",
+          "body": "为欧恩贝奶粉新品上市制作AI电商广告，以温馨家庭场景与柔和视觉风格，传递产品自然亲和力。"
+        },
+        {
+          "title": "Design Goal",
+          "body": "以暖色调营造温馨氛围，高效传递欧恩贝奶粉优质卖点，契合电商广告高效传播诉求。"
+        },
+        {
+          "title": "Process",
+          "body": "通过agent+seedance 2.0高效锚定温馨场景与人物形象，后期合成粒子海洋与产品素材"
+        },
+        {
+          "title": "Output",
+          "body": "交付横版16:9成片，含字幕安全区与播出版本，适配电商广告场景。"
+        }
+      ],
+      "galleryAspect": "16:9"
+    }
+  },
+  {
+    "id": "p8",
+    "title": "2026春夏出游季",
+    "category": "ai-live-action",
+    "tags": [
+      "服装",
+      "电商"
+    ],
+    "desc": "JNBY春夏装lookbook",
+    "long": "用节点合成控制随机种子与节拍同步；导出多版供 VJ 与社交切片；保留工程文件便于后续改调色与画幅。",
+    "gradient": "linear-gradient(135deg, #0a0c1b 0%, #223060 50%, #ff9a3c 100%)",
+    "posterUrl": "public/images/project-8-cover.png",
+    "previewVideoUrl": "",
+    "embedUrl": "",
+    "caseStudy": {
+      "kicker": "AIGC Creative Video",
+      "title": "2026\n春夏出游季",
+      "titleEn": "JNBY春夏装lookbook",
+      "decor": "",
+      "videoUrl": "",
+      "videoPoster": "public/images/project-8-cover.png",
+      "intro": "2026JNBY春夏出游服装lookbook，采用AI场景生成与实拍模特结合，呈现多元出游风格，轻松时尚。一周内完成策划、拍摄、后期，提供30组服装成片，满足电商及社交传播需求。",
+      "meta": [
+        {
+          "label": "Format",
+          "value": "9:16"
+        },
+        {
+          "label": "Genre",
+          "value": "AI+实拍·服装电商"
+        },
+        {
+          "label": "Year",
+          "value": "2026"
+        },
+        {
+          "label": "AI PLATFORM",
+          "value": "Gemini  / Nano banana 2 / Tapnow"
+        }
+      ],
+      "gallery": [
+        "public/images/project-8-still-01.png",
+        "public/images/project-8-still-02.png",
+        "public/images/project-8-still-03.png",
+        "public/images/project-8-still-04.png",
+        "public/images/project-8-still-05.png",
+        "public/images/project-8-still-06.png",
+        "public/images/project-8-still-07.png",
+        "public/images/project-8-still-08.png"
+      ],
+      "galleryAspect": "9:16",
+      "cards": [
+        {
+          "title": "Project Background",
+          "body": "2026JNBY春夏出游服装lookbook，以AI生成场景融合实拍模特，呈现多元出游风格，适配电商视觉需求。"
+        },
+        {
+          "title": "Design Goal",
+          "body": "以AI+实拍融合自然都市场景，呈现春夏出游的轻松时尚感，适配电商多平台传播与视觉切片需求。"
+        },
+        {
+          "title": "Process",
+          "body": "客户需要在短期内出片，结合模特实拍和AI场景生成、后期调色修图，从策划到成片，一周即完成30组成片。"
+        },
+        {
+          "title": "Output",
+          "body": "交付多组9:16竖版成片，适配电商及社交传播场景。"
+        }
+      ]
+    },
+    "externalUrl": ""
+  }
+]

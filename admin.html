@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>案例后台 · 迪威AIGC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Syne:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20250622q" />
+    <link rel="stylesheet" href="admin.css?v=20250624a" />
+  </head>
+  <body class="admin-body">
+    <section class="admin-login" id="login-screen">
+      <div class="admin-login-card">
+        <h1 id="login-title">案例后台</h1>
+        <p>管理案例卡与二级详情页内容。保存后主页会同步更新。</p>
+        <form id="login-form">
+          <div class="admin-field">
+            <label for="login-password">访问密码</label>
+            <input id="login-password" type="password" autocomplete="current-password" required />
+          </div>
+          <button class="admin-btn admin-btn--primary" type="submit" style="width: 100%">进入后台</button>
+        </form>
+      </div>
+    </section>
+
+    <div class="admin-app" id="admin-app" hidden>
+      <header class="admin-header">
+        <div>
+          <h1 id="app-title">案例后台</h1>
+        </div>
+        <div class="admin-header-actions">
+          <span class="admin-status" id="save-status">已同步</span>
+          <a class="admin-btn admin-btn--ghost" href="index.html#work" target="_blank" rel="noopener">预览主页</a>
+          <button type="button" class="admin-btn" id="btn-reload">重新加载</button>
+          <button type="button" class="admin-btn" id="btn-import">导入 JSON</button>
+          <button type="button" class="admin-btn" id="btn-export">导出 JSON</button>
+          <button type="button" class="admin-btn admin-btn--primary" id="btn-save">保存并发布</button>
+          <button type="button" class="admin-btn admin-btn--ghost" id="btn-logout">退出</button>
+        </div>
+      </header>
+
+      <div class="admin-layout">
+        <aside class="admin-sidebar" id="project-nav" aria-label="案例列表"></aside>
+        <main class="admin-main">
+          <form id="project-form" novalidate></form>
+        </main>
+      </div>
+    </div>
+
+    <input type="file" id="import-file" accept="application/json,.json" hidden />
+    <input
+      type="file"
+      id="image-upload-input"
+      accept="image/png,image/jpeg,image/webp,image/gif,image/heic,image/heif,.heic,.heif"
+      hidden
+    />
+    <div class="admin-toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="admin.js?v=20250624a" defer></script>
+  </body>
+</html>

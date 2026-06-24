@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="hero-fx-ready" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      try {
+        if (localStorage.getItem("portfolio-theme") === "dark") {
+          document.documentElement.removeAttribute("data-theme");
+        }
+      } catch (e) {}
+    </script>
     <meta name="description" content="AIGC 视频创作者 — 概念片、商业影像与生成式工作流案例" />
-    <title>AIGC 影像 · 作品集</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>迪威AIGC · Portfolio · 个人作品集</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Orbitron:wght@500;700&family=Syne:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20250622n" />
   </head>
   <body>
     <div class="bg-glow" aria-hidden="true"></div>
@@ -14,11 +27,12 @@
 
     <header class="site-header">
       <div class="header-inner">
-        <a class="logo" href="#">Signal<span>Frame</span></a>
+        <a class="logo" href="#top">迪威AIGC·<span>Portfolio</span></a>
         <nav class="nav-main" aria-label="页面导航">
-          <a href="#showreel">案例视频</a>
-          <a href="#work">项目</a>
           <a href="#about">关于</a>
+          <a href="#work">作品集</a>
+          <a href="#services">服务内容</a>
+          <a href="#process">服务流程</a>
           <a href="#contact">联系</a>
         </nav>
         <div class="header-actions">
@@ -26,7 +40,7 @@
             type="button"
             class="icon-btn"
             id="theme-toggle"
-            aria-label="切换配色主题"
+            aria-label="切换为深色模式"
           >
             <svg class="hidden" data-icon="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
@@ -42,78 +56,212 @@
 
     <main>
       <section id="top" class="section hero" aria-labelledby="hero-title">
+        <div class="hero-bg" aria-hidden="true">
+          <video
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+          >
+            <source src="public/videos/kling_20260617_作品_固定机位_超慢镜头电_4872_0.mp4" type="video/mp4" />
+          </video>
+          <canvas id="hero-fx-canvas" class="hero-fx-canvas"></canvas>
+          <div class="hero-spotlight"></div>
+          <div class="hero-bg-vignette"></div>
+        </div>
         <div class="hero-inner">
-          <div class="hero-copy">
-            <p class="hero-badge reveal-static">AIGC · Generative Video</p>
-            <h1 id="hero-title" class="reveal-static">把想象<br /><span class="accent">推进成片</span></h1>
-            <p class="hero-lead reveal-static">
-              专注 AIGC 影像：从概念、分镜到生成式合成与后期，服务品牌片、MV、预告与实验短片。下面是可播放案例与完整项目说明 — 欢迎点击播放或展开详情。
-            </p>
-            <div class="hero-cta reveal-static">
-              <a class="btn btn-primary" href="#showreel">观看案例</a>
-              <a class="btn btn-ghost" href="#contact">委托合作</a>
+          <div class="hero-card">
+            <div class="hero-profile">
+              <div class="hero-avatar">
+                <span class="hero-avatar-ring" aria-hidden="true"></span>
+                <img
+                  class="hero-avatar-img"
+                  src="public/images/avatar.png"
+                  alt="迪威"
+                  width="128"
+                  height="128"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <h1 id="hero-title" class="hero-name">迪威</h1>
+              <p class="hero-name-en">FADEAWAY</p>
+              <p class="hero-roles">
+                AIGC 影像导演 / 视觉创作者 / 资深摄影师 / 阿里国际AITIC AIGC认证技能专家
+              </p>
+              <p class="hero-roles-en">
+                AIGC Director / Creator / Sr. Photographer / Alibaba Intl. AITIC AIGC Certified Skills Expert
+              </p>
+              <nav class="hero-social" aria-label="邮件联系">
+                <a href="mailto:reelsh@126.com" aria-label="发送邮件">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </a>
+              </nav>
             </div>
           </div>
         </div>
-        <div class="hero-scroll" aria-hidden="true">
-          <span class="hero-scroll-line"></span>
-          Scroll
-        </div>
+        <a href="#about" class="hero-scroll-btn" aria-label="向下滚动至关于">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </a>
       </section>
 
-      <section id="showreel" class="section video-section" aria-labelledby="showreel-title">
-        <div class="section-head">
-          <div>
-            <p class="section-label" id="showreel-label">Showreel</p>
-            <h2 id="showreel-title">案例视频</h2>
+      <section id="about" class="section about-section" aria-labelledby="about-title">
+        <header class="about-header reveal-static">
+          <div class="section-heading">
+            <p class="section-heading-en blur-text" data-blur-by="words" data-blur-direction="top" data-blur-delay="320" aria-hidden="true">ABOUT</p>
+            <h2 id="about-title" class="section-heading-zh">
+              <span class="blur-text" data-blur-by="letters" data-blur-direction="top" data-blur-delay="200" data-blur-base-delay="320">关于</span><span class="section-heading-dot" aria-hidden="true"></span>
+            </h2>
           </div>
-          <p>嵌入你常用的平台链接（YouTube / Vimeo / Bilibili 等）。在 <code>main.js</code> 的 <code>videos</code> 里填写 <code>embedUrl</code> 即可替换演示片。</p>
+          <div class="about-divider" aria-hidden="true"></div>
+        </header>
+        <div class="about-layout">
+          <div class="about-main reveal-static">
+            <h3 class="about-tagline">
+              AIGC创意实践者 · 资深商业影像摄影师 · 全流程影像专家
+            </h3>
+            <p class="about-tagline-en">
+              AIGC Creative Practitioner · Senior Commercial Photographer · Full-Process Visual Production Specialist
+            </p>
+            <p class="about-body">
+              专注于品牌叙事、电影化影像与生成式视觉创新。通过融合创意策略、视觉设计与AI技术，致力于打造兼具美学价值与传播力的内容体验。作品横跨商业广告、品牌短片、企业宣传影像及电商视觉项目，统筹并主导参与全流程制作，确保项目高效落地，并在保持商业价值的同时追求艺术突破。
+            </p>
+            <p class="about-body-en">
+              Specializing in brand storytelling, cinematic imagery, and generative visual innovation, I integrate creative strategy, visual design, and AI to create content that balances aesthetic excellence with strong communication impact. My work spans commercial advertising, branded films, corporate promotional content, and e-commerce visual campaigns. I lead end-to-end production from concept to delivery—ensuring efficient execution while maintaining commercial value and pursuing artistic innovation.
+            </p>
+          </div>
+          <aside class="about-sidebar reveal-static" aria-label="联系方式">
+            <div class="about-info-tiles">
+              <article class="about-info-tile">
+                <div class="about-info-tile__head">
+                  <svg class="about-info-tile__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <span class="about-info-tile__label">城市</span>
+                </div>
+                <p class="about-info-tile__value">Base 上海/南京</p>
+              </article>
+              <a class="about-info-tile about-info-tile--link" href="mailto:reelsh@126.com">
+                <div class="about-info-tile__head">
+                  <svg class="about-info-tile__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                  <span class="about-info-tile__label">邮件</span>
+                </div>
+                <p class="about-info-tile__value">reelsh@126.com</p>
+              </a>
+              <article class="about-info-tile about-info-tile--empty" aria-disabled="true">
+                <div class="about-info-tile__head">
+                  <svg class="about-info-tile__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                    <path d="M2 12h20" />
+                  </svg>
+                  <span class="about-info-tile__label">网站</span>
+                </div>
+                <p class="about-info-tile__value about-info-tile__value--muted">待补充</p>
+              </article>
+            </div>
+            <a class="about-cta-btn" href="#work">作品集 Portfolio →</a>
+          </aside>
         </div>
-        <div class="filters" id="video-filters" role="toolbar" aria-label="视频分类筛选"></div>
-        <div class="video-grid" id="video-grid"></div>
       </section>
 
       <section id="work" class="section" aria-labelledby="work-title">
-        <div class="section-head">
-          <div>
-            <p class="section-label" id="work-label">Projects</p>
-            <h2 id="work-title">制作项目</h2>
+        <header class="about-header reveal-static">
+          <div class="section-heading">
+            <p class="section-heading-en blur-text" data-blur-by="words" data-blur-direction="top" data-blur-delay="320" aria-hidden="true">PORTFOLIO</p>
+            <h2 id="work-title" class="section-heading-zh">
+              <span class="blur-text" data-blur-by="letters" data-blur-direction="top" data-blur-delay="200" data-blur-base-delay="320">作品集</span><span class="section-heading-dot" aria-hidden="true"></span>
+            </h2>
           </div>
-          <p>按委托类型浏览：从创意生成到实拍合成与交付规格，点击卡片阅读幕后流程。</p>
-        </div>
+          <div class="about-divider" aria-hidden="true"></div>
+        </header>
         <div class="filters" id="filters" role="toolbar" aria-label="项目分类筛选"></div>
-        <div class="project-grid" id="project-grid"></div>
+        <div class="project-rows" id="project-grid"></div>
       </section>
 
-      <section id="about" class="section" aria-labelledby="about-title">
-        <h2 id="about-title" class="section-label">About</h2>
-        <div class="about-grid">
-          <div class="about-prose reveal-static">
-            <h2>生成式工作流，电影级纪律</h2>
-            <p>
-              我相信 AIGC 的价值在于「可控的偶然」：用模型探索画面可能性，用剪辑与调色把它收束成叙事。工作流里会明确参考审美、角色一致性与镜头语法，而不是堆砌特效。
-            </p>
-            <p>
-              本页为静态展示，视频区使用 iframe 嵌入；若你开启系统的「减少动态效果」，页面会自动减弱动画与扫描线，保证阅读舒适。
-            </p>
+      <section id="services" class="section services-section" aria-labelledby="services-title">
+        <header class="services-header reveal-static">
+          <div class="section-heading">
+            <p class="section-heading-en blur-text" data-blur-by="words" data-blur-direction="top" data-blur-delay="200" aria-hidden="true">SERVICES</p>
+            <h2 id="services-title" class="section-heading-zh">
+              <span class="blur-text" data-blur-by="letters" data-blur-direction="top" data-blur-delay="120" data-blur-base-delay="180">服务内容</span><span class="section-heading-dot" aria-hidden="true"></span>
+            </h2>
           </div>
-          <div class="stat-board reveal-static" aria-label="创作数据概览">
-            <div class="stat">
-              <div class="stat-value">4K</div>
-              <div class="stat-label">常规交付分辨率</div>
+        </header>
+        <div class="services-grid">
+          <article class="service-card reveal-static">
+            <p class="service-card-index">01 / AD</p>
+            <h3 class="service-card-title"><span class="service-card-title-dot" aria-hidden="true"></span>AI × 广告</h3>
+            <p class="service-card-desc">品牌 TVC、种草短片与 campaign 视觉，用 AIGC 快速产出高质感商业广告，兼顾传播效率与品牌调性。</p>
+            <div class="service-card-tags">
+              <span class="service-card-tag">品牌概念与分镜策划</span>
+              <span class="service-card-tag">多版本广告素材生成</span>
+              <span class="service-card-tag">产品展示与场景氛围搭建</span>
+              <span class="service-card-tag">多平台尺寸裁切交付</span>
             </div>
-            <div class="stat">
-              <div class="stat-value">HDR</div>
-              <div class="stat-label">可选调色与母带</div>
+          </article>
+          <article class="service-card reveal-static">
+            <p class="service-card-index">02 / FILM</p>
+            <h3 class="service-card-title"><span class="service-card-title-dot" aria-hidden="true"></span>AI × 短片</h3>
+            <p class="service-card-desc">叙事型 AIGC 短片与概念影像，电影化镜头语言、节奏与情绪表达，适用于品牌故事与创意展示。</p>
+            <div class="service-card-tags">
+              <span class="service-card-tag">创意脚本与视觉世界观</span>
+              <span class="service-card-tag">角色场景与镜头设计</span>
+              <span class="service-card-tag">影视级运镜与剪辑调色</span>
+              <span class="service-card-tag">配乐音效与氛围包装</span>
             </div>
-            <div class="stat">
-              <div class="stat-value">∞</div>
-              <div class="stat-label">迭代与版本管理</div>
+          </article>
+          <article class="service-card reveal-static">
+            <p class="service-card-index">03 / EC</p>
+            <h3 class="service-card-title"><span class="service-card-title-dot" aria-hidden="true"></span>AI × 电商</h3>
+            <p class="service-card-desc">电商主图、详情页视频与直播素材，批量生产、风格统一，帮助商品在平台上快速建立视觉记忆点。</p>
+            <div class="service-card-tags">
+              <span class="service-card-tag">商品场景图与氛围图</span>
+              <span class="service-card-tag">15–30 秒卖点短视频</span>
+              <span class="service-card-tag">多 SKU 批量视觉延展</span>
+              <span class="service-card-tag">平台规范尺寸适配</span>
             </div>
-            <div class="stat">
-              <div class="stat-value">24h</div>
-              <div class="stat-label">通常首次回复时效</div>
+          </article>
+          <article class="service-card reveal-static">
+            <p class="service-card-index">04 / LIVE</p>
+            <h3 class="service-card-title"><span class="service-card-title-dot" aria-hidden="true"></span>AI × 实拍</h3>
+            <p class="service-card-desc">实拍素材与生成式影像融合，真实质感与艺术表达兼顾，适合汽车、产品与人像类商业项目。</p>
+            <div class="service-card-tags">
+              <span class="service-card-tag">实拍拍摄与现场统筹</span>
+              <span class="service-card-tag">绿幕抠像与合成</span>
+              <span class="service-card-tag">AI 制景 / 换景 / 风格化</span>
+              <span class="service-card-tag">商业级调色与成片交付</span>
             </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="process" class="section process-section" aria-labelledby="process-title">
+        <div class="process-layout">
+          <header class="process-header reveal-static">
+            <div class="section-heading">
+              <p class="section-heading-en blur-text" data-blur-by="words" data-blur-direction="top" data-blur-delay="200" aria-hidden="true">PROCESS</p>
+              <h2 id="process-title" class="section-heading-zh">
+                <span class="blur-text" data-blur-by="letters" data-blur-direction="top" data-blur-delay="120" data-blur-base-delay="180">服务流程</span><span class="section-heading-dot" aria-hidden="true"></span>
+              </h2>
+            </div>
+            <p class="process-subtitle blur-text blur-text--rich" data-blur-by="letters" data-blur-direction="top" data-blur-delay="50" data-blur-base-delay="420">
+              <span class="process-subtitle-em">复合AGENT</span>完成<span class="process-subtitle-em">8个标准环节</span>，覆盖 AIGC <span class="process-subtitle-em">影像全流程</span>，可按项目需求<span class="process-subtitle-em">灵活组合</span>。
+            </p>
+          </header>
+          <div class="process-stepper-wrap reveal-static">
+            <div id="process-stepper-root" class="process-stepper-root"></div>
           </div>
         </div>
       </section>
@@ -121,73 +269,43 @@
 
     <section id="contact" class="contact-section" aria-labelledby="contact-title">
       <div class="contact-inner">
-        <div class="contact-lead reveal-static">
-          <h2 id="contact-title">聊聊你的下一条片</h2>
-          <p>附上参考链接、档期与预算区间，说明是否需要实拍合成或纯生成。邮件或社媒均可，看到就会回。</p>
-        </div>
-        <div class="social-row reveal-static">
-          <a href="mailto:hello@example.com" aria-label="发送邮件">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect width="20" height="16" x="2" y="4" rx="2" />
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-            </svg>
-          </a>
-          <a href="https://www.youtube.com" rel="noopener noreferrer" aria-label="YouTube">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
-              <path d="m10 15 5-3-5-3z" />
-            </svg>
-          </a>
-          <a href="https://vimeo.com" rel="noopener noreferrer" aria-label="Vimeo">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 8.35V16a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8.35A4 4 0 0 1 6 4h12a4 4 0 0 1 4 4Z" />
-              <path d="m9 10 4 2-4 2v-4Z" />
-            </svg>
-          </a>
-          <a href="https://www.bilibili.com" rel="noopener noreferrer" aria-label="哔哩哔哩">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect width="20" height="14" x="2" y="5" rx="2" />
-              <path d="m10 9 4 3-4 3V9Z" />
-            </svg>
-          </a>
+        <div class="contact-panel reveal-static">
+          <div class="contact-layout">
+            <div class="contact-intro">
+              <div class="section-heading">
+                <p class="section-heading-en blur-text" data-blur-by="words" data-blur-direction="top" data-blur-delay="200" aria-hidden="true">LET'S AIGC TOGETHER</p>
+                <h2 id="contact-title" class="section-heading-zh">
+                  <span class="blur-text" data-blur-by="letters" data-blur-direction="top" data-blur-delay="120" data-blur-base-delay="180">合作联系</span><span class="section-heading-dot" aria-hidden="true"></span>
+                </h2>
+              </div>
+              <div class="contact-tags" aria-label="合作方向">
+                <span class="contact-tag">AI × 广告</span>
+                <span class="contact-tag">AI × 短片</span>
+                <span class="contact-tag">AI × 电商</span>
+                <span class="contact-tag">AI × 实拍</span>
+              </div>
+            </div>
+
+            <aside class="contact-card" aria-label="联系方式">
+              <p class="contact-card-label">CONTACT</p>
+              <p class="contact-email">
+                <a href="mailto:reelsh@126.com" id="contact-email">reelsh@126.com</a>
+              </p>
+              <div class="contact-actions">
+                <a class="contact-btn contact-btn--primary" href="mailto:reelsh@126.com">EMAIL ME</a>
+                <button type="button" class="contact-btn contact-btn--outline" id="contact-copy" data-copy="reelsh@126.com">COPY CONTACT</button>
+                <a class="contact-btn contact-btn--ghost" href="#about">ABOUT ME</a>
+              </div>
+            </aside>
+          </div>
+          <p class="contact-watermark" aria-hidden="true">CONTACT</p>
         </div>
       </div>
     </section>
 
     <footer class="site-footer">
-      <span>© <span id="y"></span> SignalFrame · AIGC 视频</span>
-      <span>青绿信号 × 琥珀点缀 · 非蓝紫套系</span>
+      <span>© <span id="y"></span> 迪威 AIGC</span>
     </footer>
-
-    <div
-      id="video-modal"
-      class="modal-backdrop"
-      role="dialog"
-      aria-modal="true"
-      aria-hidden="true"
-      aria-labelledby="video-modal-title"
-    >
-      <div class="modal modal--video">
-        <div class="modal-header">
-          <h3 id="video-modal-title"></h3>
-          <button type="button" class="modal-close" id="video-modal-close" aria-label="关闭视频">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M18 6 6 18" />
-              <path d="m6 6 12 12" />
-            </svg>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div id="video-frame-wrap"></div>
-          <div class="modal-tags" id="video-modal-tags"></div>
-          <p id="video-modal-desc"></p>
-          <div class="modal-actions">
-            <a class="btn btn-primary" href="#contact">预约合作</a>
-            <button type="button" class="btn btn-ghost" id="video-modal-close-secondary">关闭</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div
       id="project-modal"
@@ -205,13 +323,45 @@
               <path d="M18 6 6 18" />
               <path d="m6 6 12 12" />
             </svg>
+            <span class="modal-close-label" aria-hidden="true">CLOSE</span>
           </button>
         </div>
         <div class="modal-body">
+          <div class="case-layout" id="case-layout" hidden>
+            <div class="case-left">
+              <div class="case-media-main" id="case-media-main"></div>
+              <div class="case-stills-wrap">
+                <div
+                  class="case-stills-grid"
+                  id="case-gallery"
+                  role="list"
+                  aria-label="案例剧照九宫格"
+                ></div>
+              </div>
+            </div>
+            <div class="case-right">
+              <div class="case-panel">
+                <span class="case-decor" id="case-decor" aria-hidden="true"></span>
+                <header class="case-panel-head">
+                  <p class="case-intro-kicker" id="case-intro-kicker"></p>
+                  <h4 class="case-intro-title" id="case-intro-title"></h4>
+                  <p class="case-intro-subtitle" id="case-intro-subtitle"></p>
+                </header>
+                <hr class="case-panel-rule" aria-hidden="true" />
+                <div class="case-panel-synopsis">
+                  <p class="case-intro-body" id="case-intro-body"></p>
+                </div>
+                <div class="case-meta-strip" id="case-meta-strip" hidden></div>
+                <div class="case-brief-grid" id="case-brief-grid"></div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-embed-wrap" id="modal-embed-wrap" hidden></div>
           <div class="modal-preview" id="modal-preview" role="img" aria-hidden="true"></div>
           <div class="modal-tags" id="modal-tags"></div>
           <div id="modal-text"></div>
           <div class="modal-actions">
+            <a class="btn btn-primary" id="modal-watch" href="#" target="_blank" rel="noopener noreferrer" hidden>新片场观看全片 ↗</a>
             <a class="btn btn-primary" href="#contact">预约沟通</a>
             <button type="button" class="btn btn-ghost" id="modal-close-secondary">关闭</button>
           </div>
@@ -219,15 +369,58 @@
       </div>
     </div>
 
+    <div
+      id="case-still-lightbox"
+      class="case-still-lightbox"
+      hidden
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-label="剧照预览"
+    >
+      <button type="button" class="case-still-lightbox-close" id="case-still-lightbox-close" aria-label="关闭预览">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      </button>
+      <figure class="case-still-lightbox-figure">
+        <img id="case-still-lightbox-img" alt="" draggable="false" />
+        <figcaption id="case-still-lightbox-caption"></figcaption>
+      </figure>
+    </div>
+
     <script>
       document.getElementById("y").textContent = new Date().getFullYear();
       document.getElementById("modal-close-secondary").addEventListener("click", function () {
         document.getElementById("modal-close").click();
       });
-      document.getElementById("video-modal-close-secondary").addEventListener("click", function () {
-        document.getElementById("video-modal-close").click();
-      });
+
+      var copyBtn = document.getElementById("contact-copy");
+      if (copyBtn) {
+        copyBtn.addEventListener("click", function () {
+          var email = copyBtn.getAttribute("data-copy") || "";
+          if (!email) return;
+          var done = function () {
+            var original = copyBtn.textContent;
+            copyBtn.textContent = "COPIED";
+            window.setTimeout(function () {
+              copyBtn.textContent = original;
+            }, 1800);
+          };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email).then(done).catch(function () {
+              window.location.href = "mailto:" + email;
+            });
+          } else {
+            window.location.href = "mailto:" + email;
+          }
+        });
+      }
     </script>
-    <script src="main.js"></script>
+    <script src="blur-text.js?v=20250625d" defer></script>
+    <script src="main.js?v=20250624p" defer></script>
+    <script src="process-stepper.js?v=20250624v" defer></script>
+    <script type="module" src="about-border-glow.js"></script>
+    <script type="module" src="hero-fx.js"></script>
   </body>
 </html>

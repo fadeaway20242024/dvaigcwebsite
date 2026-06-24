@@ -1,169 +1,342 @@
 (function () {
   "use strict";
 
-  /**
-   * 视频案例：将 embedUrl 换成你的 YouTube/Vimeo/Bilibili 嵌入地址。
-   * Bilibili 示例：https://player.bilibili.com/player.html?bvid=BVxxxx&high_quality=1&danmaku=0
-   */
-  const videos = [
-    {
-      id: "v1",
-      title: "Showreel 2025 · 生成式影像混剪",
-      category: "showreel",
-      tags: ["Showreel", "Mixed"],
-      duration: "01:52",
-      desc: "概念片、商业镜头与实验片段的蒙太奇，展示节奏与光影一致性。",
-      thumbGradient: "linear-gradient(145deg, #06201a 0%, #0f3d32 42%, #3d2f0a 100%)",
-      embedUrl: "https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ",
-    },
-    {
-      id: "v2",
-      title: "品牌片 · 城市脉冲",
-      category: "commercial",
-      tags: ["Commercial", "AIGC+实拍"],
-      duration: "00:48",
-      desc: "夜景与生成建筑延伸的合成，强调霓虹与车轨的层次。",
-      thumbGradient: "linear-gradient(155deg, #1a0f08 0%, #4a2c14 40%, #1a3d2e 100%)",
-      embedUrl: "https://player.vimeo.com/video/148751763",
-    },
-    {
-      id: "v3",
-      title: "实验 · 单镜头长呼吸",
-      category: "experimental",
-      tags: ["Experimental", "Loop"],
-      duration: "00:36",
-      desc: "单一镜头内的光影漂移，测试角色与场景的时序稳定性。",
-      thumbGradient: "linear-gradient(135deg, #0d1814 0%, #234038 50%, #5c4a1a 100%)",
-      embedUrl: "",
-    },
-    {
-      id: "v4",
-      title: "MV 片段 · 故障诗",
-      category: "experimental",
-      tags: ["MV", "Glitch"],
-      duration: "01:05",
-      desc: "歌词可视化与频闪节奏，克制使用颗粒与色差。",
-      thumbGradient: "linear-gradient(120deg, #101812 0%, #1e2a24 45%, #4a3d12 100%)",
-      embedUrl: "",
-    },
-    {
-      id: "v5",
-      title: "产品发布 · 预告 15s",
-      category: "commercial",
-      tags: ["Launch", "Teaser"],
-      duration: "00:15",
-      desc: "硬件轮廓光 + 生成环境雾，突出材质与体积光。",
-      thumbGradient: "linear-gradient(160deg, #080c0a 0%, #163028 55%, #6b5420 100%)",
-      embedUrl: "",
-    },
-    {
-      id: "v6",
-      title: "幕后流程速览",
-      category: "showreel",
-      tags: ["BTS", "Pipeline"],
-      duration: "02:10",
-      desc: "从 moodboard、分镜到合成与母带交付的快速演示（可换为你的长视频）。",
-      thumbGradient: "linear-gradient(145deg, #0a1210 0%, #1a3028 40%, #3d3518 100%)",
-      embedUrl: "",
-    },
-  ];
+  let projects = [];
 
-  const projects = [
-    {
-      id: "p1",
-      title: "科技品牌 · 生成式发布会开场",
-      category: "commercial",
-      tags: ["TVC", "Runway"],
-      desc: "90 秒开场：生成场景与实拍主讲穿插，统一调色与镜头语言。",
-      long: "分镜阶段锁定构图与光比；生成批次用参考图约束风格；实拍绿幕与 CG 环境对接，最后在 DaVinci 做 HDR 母带与多比例裁切。",
-      featured: true,
-      gradient: "linear-gradient(135deg, #071410 0%, #1a3d30 50%, #4a3d10 100%)",
-    },
-    {
-      id: "p2",
-      title: "音乐人 MV · 梦境走廊",
-      category: "mv",
-      tags: ["MV", "Stylized"],
-      desc: "走廊无限循环的视觉母题，强调色调渐变与节拍剪辑点。",
-      long: "音乐结构映射镜头重复与变形；AIGC 负责纹理与天空盒迭代，手工修补人物边缘与手持抖动。",
-      wide: true,
-      gradient: "linear-gradient(125deg, #120a06 0%, #3d2814 45%, #1a3020 100%)",
-    },
-    {
-      id: "p3",
-      title: "纪录片片头 · 数据之海",
-      category: "commercial",
-      tags: ["Title", "Motion"],
-      desc: "抽象粒子与真实档案画面叠化，建立严肃基调。",
-      long: "粒子系统与生成海洋素材分层合成；字幕安全区与播出版本字幕流单独导出。",
-      tall: true,
-      gradient: "linear-gradient(160deg, #050807 0%, #142820 40%, #2d4a38 100%)",
-    },
-    {
-      id: "p4",
-      title: "时尚概念 · 织物与风",
-      category: "experimental",
-      tags: ["Concept", "Lookdev"],
-      desc: "无对白短片：材质特写与慢门，探索布面与风的互动。",
-      long: "多模型出图后统一色彩分级；风与布的动态用实拍素材混合生成补帧，避免塑料感。",
-      gradient: "linear-gradient(135deg, #0c100e 0%, #1e3228 48%, #5c4a22 100%)",
-    },
-    {
-      id: "p5",
-      title: "游戏宣发 · 15s 竖版广告",
-      category: "commercial",
-      tags: ["Social", "9:16"],
-      desc: "竖屏节奏广告：前三秒钩子 + UI 与角色混剪。",
-      long: "平台 A/B 测试两版片头；生成背景与 UI 录屏对齐安全区；输出含无字幕净版。",
-      gradient: "linear-gradient(135deg, #080a09 0%, #16302a 50%, #4a3810 100%)",
-    },
-    {
-      id: "p6",
-      title: "展览空间 · 循环投影",
-      category: "experimental",
-      tags: ["Installation", "Loop"],
-      desc: "展馆墙面 8 分钟无缝循环，避免跳点与频闪敏感。",
-      long: "循环点做交叉淡化；亮度按现场照度校准；提供工程版 ProRes 与 HAP 备选方案。",
-      gradient: "linear-gradient(135deg, #0a0c0b 0%, #1a2820 45%, #3d3018 100%)",
-    },
-  ];
+  const PROJECTS_STORAGE_KEY = "portfolio-projects-draft";
+  const PROJECTS_JSON_URL = "data/projects.json";
+  const MEDIA_CACHE_VER = "20250623d";
+
+  async function loadProjects() {
+    const isLocalHost =
+      location.hostname === "127.0.0.1" || location.hostname === "localhost";
+
+    let jsonData = null;
+    let draftData = null;
+
+    try {
+      const res = await fetch(PROJECTS_JSON_URL + "?v=" + Date.now());
+      if (res.ok) {
+        const json = await res.json();
+        if (Array.isArray(json) && json.length) jsonData = json;
+      }
+    } catch (_) {
+      /* ignore */
+    }
+
+    if (isLocalHost) {
+      try {
+        const draft = localStorage.getItem(PROJECTS_STORAGE_KEY);
+        if (draft) {
+          const parsed = JSON.parse(draft);
+          if (Array.isArray(parsed) && parsed.length) draftData = parsed;
+        }
+      } catch (_) {
+        /* ignore */
+      }
+    }
+
+    const data = jsonData || draftData;
+    return (data || []).map(normalizeCaseMedia);
+  }
+
+  function isDirectVideoUrl(url) {
+    const value = String(url || "").trim();
+    if (!value) return false;
+    try {
+      return /\.(mp4|webm|mov|m4v|ogv|ogg)(\?|#|$)/i.test(new URL(value, "https://example.com").pathname);
+    } catch (_) {
+      return /\.(mp4|webm|mov|m4v|ogv|ogg)(\?|#|$)/i.test(value);
+    }
+  }
+
+  function resolveCaseExternalUrl(p, cs) {
+    cs = cs || {};
+    const external = String(p.externalUrl || "").trim();
+    if (external) return external;
+    const legacyVideo = String(cs.videoUrl || "").trim();
+    if (legacyVideo && !isDirectVideoUrl(legacyVideo)) return legacyVideo;
+    const embed = String(p.embedUrl || "").trim();
+    if (embed && /xinpianchang\.com/i.test(embed)) return embed;
+    return "";
+  }
+
+  function resolveDirectVideoUrl(p, cs) {
+    cs = cs || {};
+    const candidates = [cs.videoUrl, p.previewVideoUrl];
+    for (let i = 0; i < candidates.length; i++) {
+      const value = String(candidates[i] || "").trim();
+      if (value && isDirectVideoUrl(value)) return value;
+    }
+    return "";
+  }
+
+  function normalizeCaseMedia(p) {
+    if (!p || !p.caseStudy) return p;
+    const cs = p.caseStudy;
+    const videoUrl = String(cs.videoUrl || "").trim();
+    if (videoUrl && !isDirectVideoUrl(videoUrl)) {
+      if (!String(p.externalUrl || "").trim()) p.externalUrl = videoUrl;
+      cs.videoUrl = "";
+    }
+
+    const poster = String(p.posterUrl || cs.videoPoster || "").trim();
+    if (poster) {
+      p.posterUrl = poster;
+      cs.videoPoster = poster;
+    }
+
+    cs.galleryAspect = String(cs.galleryAspect || "").trim() === "9:16" ? "9:16" : "16:9";
+    if (Array.isArray(cs.gallery)) {
+      cs.gallery = cs.gallery.filter(function (src) {
+        return String(src || "").trim();
+      });
+    }
+    return p;
+  }
+
+  function galleryAspectWrapClass(aspect) {
+    return String(aspect || "").trim() === "9:16"
+      ? "case-stills-wrap--portrait"
+      : "case-stills-wrap--landscape";
+  }
+
+  const caseLayout = document.getElementById("case-layout");
+  const caseMediaMain = document.getElementById("case-media-main");
+  const caseGallery = document.getElementById("case-gallery");
+
+  let caseLayoutMetricsHandler = null;
+  let caseLayoutMetricsProject = null;
+  let caseLeftResizeObserver = null;
+
+  function isPortraitGallery(aspect) {
+    return String(aspect || "").trim() === "9:16";
+  }
+
+  function countActiveCaseStills() {
+    if (!caseGallery) return 0;
+    return caseGallery.querySelectorAll(".case-still:not(.is-broken)").length;
+  }
+
+  function measureLeftColumnHeight() {
+    if (!caseLayout) return 0;
+    const leftCol = caseLayout.querySelector(".case-left");
+    if (!leftCol) return 0;
+
+    const cover = leftCol.querySelector(".case-media-main");
+    const stillsWrap = leftCol.querySelector(".case-stills-wrap");
+    if (cover && stillsWrap) {
+      const coverRect = cover.getBoundingClientRect();
+      const stillsRect = stillsWrap.getBoundingClientRect();
+      if (coverRect.height > 0 && stillsRect.height > 0) {
+        return Math.ceil(stillsRect.bottom - coverRect.top);
+      }
+    }
+
+    return Math.ceil(leftCol.getBoundingClientRect().height);
+  }
+
+  function clearCaseLayoutMetrics() {
+    if (caseLayoutMetricsHandler) {
+      window.removeEventListener("resize", caseLayoutMetricsHandler);
+      caseLayoutMetricsHandler = null;
+    }
+    if (caseLeftResizeObserver) {
+      caseLeftResizeObserver.disconnect();
+      caseLeftResizeObserver = null;
+    }
+    caseLayoutMetricsProject = null;
+    if (caseLayout) {
+      caseLayout.classList.remove("case-layout--height-synced", "case-layout--portrait");
+      caseLayout.style.removeProperty("--case-col-height");
+      caseLayout.style.height = "";
+      caseLayout.style.minHeight = "";
+      caseLayout.style.maxHeight = "";
+      const leftCol = caseLayout.querySelector(".case-left");
+      const rightCol = caseLayout.querySelector(".case-right");
+      const panel = caseLayout.querySelector(".case-panel");
+      if (leftCol) {
+        leftCol.style.height = "";
+        leftCol.style.minHeight = "";
+        leftCol.style.maxHeight = "";
+      }
+      if (rightCol) {
+        rightCol.style.height = "";
+        rightCol.style.minHeight = "";
+        rightCol.style.maxHeight = "";
+      }
+      if (panel) {
+        panel.style.height = "";
+        panel.style.minHeight = "";
+        panel.style.maxHeight = "";
+      }
+    }
+    if (caseGallery) {
+      caseGallery.style.removeProperty("--portrait-still-w");
+      caseGallery.style.removeProperty("--portrait-still-h");
+      caseGallery.style.removeProperty("--portrait-gap");
+    }
+  }
+
+  function bindCaseLeftResizeObserver() {
+    if (!caseLayout || caseLeftResizeObserver || typeof ResizeObserver === "undefined") return;
+    const leftCol = caseLayout.querySelector(".case-left");
+    if (!leftCol) return;
+
+    caseLeftResizeObserver = new ResizeObserver(function () {
+      if (caseLayoutMetricsProject) syncCaseColumnHeights(caseLayoutMetricsProject);
+    });
+    caseLeftResizeObserver.observe(leftCol);
+  }
+
+  function layoutPortraitGallery(p) {
+    if (!caseGallery || !caseLayout || !p || !p.caseStudy) return;
+    if (!isPortraitGallery(p.caseStudy.galleryAspect)) return;
+
+    const stillsWrap = caseGallery.closest(".case-stills-wrap");
+    const leftCol = stillsWrap && stillsWrap.closest(".case-left");
+    const count = countActiveCaseStills();
+    if (!stillsWrap || !leftCol || !count) return;
+
+    const cols = 4;
+    const gridGap = 5;
+    const leftW = leftCol.clientWidth;
+    if (leftW <= 0) return;
+
+    const cellW = (leftW - gridGap * (cols - 1)) / cols;
+    const cellH = (cellW * 16) / 9;
+
+    caseGallery.style.setProperty("--portrait-still-w", cellW.toFixed(2) + "px");
+    caseGallery.style.setProperty("--portrait-still-h", cellH.toFixed(2) + "px");
+    caseGallery.style.setProperty("--portrait-gap", gridGap + "px");
+  }
+
+  function syncCaseColumnHeights(p) {
+    if (!caseLayout || caseLayout.hidden) return;
+    if (window.matchMedia("(max-width: 960px)").matches) {
+      clearCaseLayoutMetrics();
+      return;
+    }
+
+    const isPortrait = isPortraitGallery(p && p.caseStudy && p.caseStudy.galleryAspect);
+    const leftCol = caseLayout.querySelector(".case-left");
+    const rightCol = caseLayout.querySelector(".case-right");
+    const panel = caseLayout.querySelector(".case-panel");
+    if (!leftCol || !rightCol || !panel) return;
+
+    caseLayout.classList.toggle("case-layout--portrait", isPortrait);
+
+    leftCol.style.height = "";
+    leftCol.style.minHeight = "";
+    leftCol.style.maxHeight = "";
+
+    if (isPortrait) {
+      caseLayout.classList.remove("case-layout--height-synced");
+      layoutPortraitGallery(p);
+    } else {
+      caseLayout.classList.add("case-layout--height-synced");
+      if (caseGallery) {
+        caseGallery.style.removeProperty("--portrait-still-w");
+        caseGallery.style.removeProperty("--portrait-still-h");
+        caseGallery.style.removeProperty("--portrait-gap");
+      }
+    }
+
+    void leftCol.offsetHeight;
+
+    const h = measureLeftColumnHeight();
+    if (h <= 0) return;
+
+    const heightPx = h + "px";
+    caseLayout.style.setProperty("--case-col-height", heightPx);
+    caseLayout.style.height = heightPx;
+    caseLayout.style.minHeight = "0";
+    caseLayout.style.maxHeight = heightPx;
+
+    rightCol.style.height = heightPx;
+    rightCol.style.minHeight = "0";
+    rightCol.style.maxHeight = heightPx;
+
+    panel.style.height = "100%";
+    panel.style.minHeight = "0";
+    panel.style.maxHeight = "100%";
+  }
+
+  function applyCaseLayoutMetrics(p) {
+    if (!p || !p.caseStudy) return;
+    syncCaseColumnHeights(p);
+    bindCaseLeftResizeObserver();
+  }
+
+  function scheduleCaseLayoutMetrics(p) {
+    if (!p || !p.caseStudy) {
+      clearCaseLayoutMetrics();
+      return;
+    }
+
+    caseLayoutMetricsProject = p;
+    if (!caseLayoutMetricsHandler) {
+      caseLayoutMetricsHandler = function () {
+        if (caseLayoutMetricsProject) applyCaseLayoutMetrics(caseLayoutMetricsProject);
+      };
+      window.addEventListener("resize", caseLayoutMetricsHandler);
+    }
+
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        applyCaseLayoutMetrics(p);
+        requestAnimationFrame(function () {
+          applyCaseLayoutMetrics(p);
+        });
+      });
+    });
+    window.setTimeout(function () {
+      if (caseLayoutMetricsProject === p) applyCaseLayoutMetrics(p);
+    }, 120);
+    window.setTimeout(function () {
+      if (caseLayoutMetricsProject === p) applyCaseLayoutMetrics(p);
+    }, 400);
+  }
 
   const grid = document.getElementById("project-grid");
   const filters = document.getElementById("filters");
-  const videoGrid = document.getElementById("video-grid");
-  const videoFilters = document.getElementById("video-filters");
   const themeToggle = document.getElementById("theme-toggle");
 
   const projectModal = document.getElementById("project-modal");
+  const modalPanel = projectModal ? projectModal.querySelector(".modal") : null;
+  const modalBody = modalPanel ? modalPanel.querySelector(".modal-body") : null;
   const modalTitle = document.getElementById("modal-title");
   const modalText = document.getElementById("modal-text");
   const modalPreview = document.getElementById("modal-preview");
+  const modalEmbedWrap = document.getElementById("modal-embed-wrap");
   const modalTags = document.getElementById("modal-tags");
   const modalClose = document.getElementById("modal-close");
+  const modalWatch = document.getElementById("modal-watch");
+  const caseIntroKicker = document.getElementById("case-intro-kicker");
+  const caseIntroTitle = document.getElementById("case-intro-title");
+  const caseIntroSubtitle = document.getElementById("case-intro-subtitle");
+  const caseIntroBody = document.getElementById("case-intro-body");
+  const caseDecor = document.getElementById("case-decor");
+  const caseBriefGrid = document.getElementById("case-brief-grid");
+  const caseMetaStrip = document.getElementById("case-meta-strip");
+  const modalActions = document.querySelector(".modal-actions");
+  const caseStillLightbox = document.getElementById("case-still-lightbox");
+  const caseStillLightboxImg = document.getElementById("case-still-lightbox-img");
+  const caseStillLightboxCaption = document.getElementById("case-still-lightbox-caption");
+  const caseStillLightboxClose = document.getElementById("case-still-lightbox-close");
 
-  const videoModal = document.getElementById("video-modal");
-  const videoModalTitle = document.getElementById("video-modal-title");
-  const videoFrameWrap = document.getElementById("video-frame-wrap");
-  const videoModalTags = document.getElementById("video-modal-tags");
-  const videoModalDesc = document.getElementById("video-modal-desc");
-  const videoModalClose = document.getElementById("video-modal-close");
+  let activeCaseStillIndex = -1;
 
   const projectCategories = [
     { id: "all", label: "全部" },
-    { id: "commercial", label: "商业 / 品牌" },
-    { id: "mv", label: "MV" },
-    { id: "experimental", label: "实验 / 艺术" },
-  ];
-
-  const videoCategories = [
-    { id: "all", label: "全部" },
-    { id: "showreel", label: "Showreel" },
-    { id: "commercial", label: "商业" },
-    { id: "experimental", label: "实验" },
+    { id: "ai-ad", label: "AI广告" },
+    { id: "ai-short", label: "AI短片" },
+    { id: "ai-ecommerce", label: "AI电商" },
+    { id: "ai-live-action", label: "AI+实拍" },
+    { id: "style-experiment", label: "风格实验" },
   ];
 
   let activeFilter = "all";
-  let activeVideoFilter = "all";
 
   function getStoredTheme() {
     try {
@@ -173,7 +346,6 @@
     }
   }
 
-  /** 默认深色未来感；浅色为 data-theme="light" */
   function applyTheme(theme) {
     const root = document.documentElement;
     if (theme === "light") {
@@ -187,6 +359,7 @@
       /* ignore */
     }
     const isLight = theme === "light";
+    if (!themeToggle) return;
     themeToggle.setAttribute("aria-label", isLight ? "切换为深色模式" : "切换为浅色模式");
     const iconSun = themeToggle.querySelector("[data-icon='sun']");
     const iconMoon = themeToggle.querySelector("[data-icon='moon']");
@@ -198,23 +371,22 @@
 
   function initTheme() {
     const stored = getStoredTheme();
-    if (stored === "light") {
-      applyTheme("light");
-      return;
-    }
     if (stored === "dark") {
       applyTheme("dark");
       return;
     }
-    applyTheme("dark");
+    applyTheme("light");
   }
 
-  themeToggle.addEventListener("click", function () {
-    const isLight = document.documentElement.getAttribute("data-theme") === "light";
-    applyTheme(isLight ? "dark" : "light");
-  });
+  if (themeToggle) {
+    themeToggle.addEventListener("click", function () {
+      const isLight = document.documentElement.getAttribute("data-theme") === "light";
+      applyTheme(isLight ? "dark" : "light");
+    });
+  }
 
   function bindFilterButtons(container, onChange) {
+    if (!container) return;
     container.querySelectorAll(".filter-btn").forEach(function (btn) {
       btn.addEventListener("click", function () {
         onChange(btn.getAttribute("data-filter") || "all", btn);
@@ -226,6 +398,7 @@
   }
 
   function renderProjectFilters() {
+    if (!filters) return;
     filters.innerHTML = projectCategories
       .map(function (c) {
         const pressed = c.id === activeFilter;
@@ -246,231 +419,591 @@
     });
   }
 
-  function renderVideoFilters() {
-    videoFilters.innerHTML = videoCategories
-      .map(function (c) {
-        const pressed = c.id === activeVideoFilter;
-        return (
-          '<button type="button" class="filter-btn" data-filter="' +
-          c.id +
-          '" aria-pressed="' +
-          pressed +
-          '">' +
-          c.label +
-          "</button>"
-        );
-      })
-      .join("");
-    bindFilterButtons(videoFilters, function (id) {
-      activeVideoFilter = id;
-      renderVideos();
-    });
-  }
-
   function escapeHtml(s) {
     const d = document.createElement("div");
     d.textContent = s;
     return d.innerHTML;
   }
 
-  function projectCard(p) {
-    const classes = ["project-card", "reveal"];
-    if (p.featured) classes.push("featured");
-    if (p.wide) classes.push("wide");
-    if (p.tall) classes.push("tall");
+  function resolveMediaUrl(path) {
+    const value = String(path || "").trim();
+    if (!value) return "";
+    if (/^(https?:|data:)/i.test(value)) return value;
+    if (value.startsWith("/")) return value;
+    const joiner = value.includes("?") ? "&" : "?";
+    return value + joiner + "v=" + MEDIA_CACHE_VER;
+  }
 
-    const tagsHtml = p.tags
-      .map(function (t) {
-        return '<span class="tag">' + escapeHtml(t) + "</span>";
-      })
-      .join("");
+  function bindBrokenImageFallback(img) {
+    if (!img || img.dataset.fallbackBound === "1") return;
+    img.dataset.fallbackBound = "1";
+    img.addEventListener("error", function () {
+      const still = img.closest(".case-still");
+      if (!still) return;
+      still.classList.add("is-broken");
+      img.removeAttribute("src");
+    });
+  }
+
+  function projectRowMedia(p) {
+    const poster = p.posterUrl && String(p.posterUrl).trim();
+    const previewSrc = p.previewVideoUrl && String(p.previewVideoUrl).trim();
+    const previewBlock = previewSrc
+      ? '<video class="project-row-preview" src="' +
+        escapeHtml(previewSrc) +
+        '" muted loop playsinline preload="metadata" aria-hidden="true"></video>'
+      : "";
+    const coverBlock = poster
+      ? '<img class="project-row-cover" src="' +
+        escapeHtml(resolveMediaUrl(poster)) +
+        '" alt="" width="960" height="540" loading="lazy" decoding="async" />'
+      : '<span class="project-row-poster-gradient" style="--card-gradient:' +
+        p.gradient +
+        '"></span>' +
+        '<span class="project-row-poster-pattern" aria-hidden="true"></span>' +
+        '<span class="project-row-poster-corner" aria-hidden="true"></span>';
 
     return (
-      '<button type="button" class="' +
-      classes.join(" ") +
-      '" data-id="' +
+      '<button type="button" class="project-row-hit" data-project-open="' +
       p.id +
-      '" aria-haspopup="dialog">' +
-      '<span class="project-visual">' +
-      '<span class="project-gradient" style="--card-gradient:' +
-      p.gradient +
-      '"></span>' +
-      '<span class="project-pattern" aria-hidden="true"></span>' +
-      '<span class="corner-frame" aria-hidden="true"></span>' +
-      '<span class="project-overlay">' +
-      '<span class="overlay-hint">案例详情</span>' +
-      '<span class="overlay-arrow" aria-hidden="true">' +
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>' +
-      "</span></span></span>" +
-      '<span class="project-body">' +
-      '<span class="project-meta">' +
-      tagsHtml +
-      "</span>" +
-      '<span class="project-title">' +
+      '" aria-label="查看「' +
       escapeHtml(p.title) +
-      "</span>" +
-      '<p class="project-desc">' +
-      escapeHtml(p.desc) +
-      "</p></span></button>"
+      '」详情与成片">' +
+      '<span class="project-row-visual">' +
+      coverBlock +
+      previewBlock +
+      '<span class="project-row-play" aria-hidden="true">' +
+      '<span class="project-row-play-btn">' +
+      '<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>' +
+      "</span></span>" +
+      "</span></button>"
     );
   }
 
-  function videoCard(v) {
-    const tagsHtml = v.tags
-      .map(function (t) {
-        return '<span class="tag">' + escapeHtml(t) + "</span>";
-      })
-      .join("");
+  function projectRow(p) {
+    const tagsHtml = p.tags.length
+      ? '<div class="project-row-meta">' +
+        p.tags
+          .map(function (t) {
+            return '<span class="tag">' + escapeHtml(t) + "</span>";
+          })
+          .join("") +
+        "</div>"
+      : "";
 
     return (
-      '<button type="button" class="video-card reveal" data-vid="' +
-      v.id +
-      '" aria-haspopup="dialog">' +
-      '<span class="video-thumb">' +
-      '<span class="video-thumb-gradient" style="--thumb-gradient:' +
-      v.thumbGradient +
-      '"></span>' +
-      '<span class="video-thumb-noise" aria-hidden="true"></span>' +
-      '<span class="video-play">' +
-      '<span class="video-play-icon">' +
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>' +
-      "</span></span>" +
-      '<span class="video-duration">' +
-      escapeHtml(v.duration) +
-      "</span></span>" +
-      '<span class="video-body">' +
-      '<span class="video-meta">' +
+      '<article class="project-row reveal" data-id="' +
+      p.id +
+      '" aria-labelledby="proj-title-' +
+      p.id +
+      '">' +
+      '<div class="project-row-media">' +
+      projectRowMedia(p) +
+      "</div>" +
+      '<div class="project-row-copy">' +
       tagsHtml +
-      "</span>" +
-      '<span class="video-title">' +
-      escapeHtml(v.title) +
-      "</span>" +
-      '<p class="video-desc">' +
-      escapeHtml(v.desc) +
-      "</p></span></button>"
+      '<h3 class="project-row-title" id="proj-title-' +
+      p.id +
+      '">' +
+      escapeHtml(p.title) +
+      "</h3>" +
+      '<p class="project-row-lead">' +
+      escapeHtml(p.desc) +
+      "</p>" +
+      "</div></article>"
     );
   }
 
   function renderProjects() {
+    if (!grid) return;
     const list =
       activeFilter === "all"
         ? projects
         : projects.filter(function (p) {
             return p.category === activeFilter;
           });
-    grid.innerHTML = list.map(projectCard).join("");
-    grid.querySelectorAll(".project-card").forEach(function (card) {
-      card.addEventListener("click", function () {
-        const id = card.getAttribute("data-id");
+    grid.innerHTML = list.map(projectRow).join("");
+    grid.querySelectorAll("[data-project-open]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        const id = btn.getAttribute("data-project-open");
         const p = projects.find(function (x) {
           return x.id === id;
         });
-        if (p) openProjectModal(p);
+        if (!p) return;
+        btn.classList.remove("project-row-hit--pulse");
+        void btn.offsetWidth;
+        btn.classList.add("project-row-hit--pulse");
+        window.setTimeout(function () {
+          btn.classList.remove("project-row-hit--pulse");
+        }, 480);
+        openProjectModal(p);
       });
     });
+    bindRowPreviewHover(grid);
     observeReveals(grid);
   }
 
-  function renderVideos() {
-    const list =
-      activeVideoFilter === "all"
-        ? videos
-        : videos.filter(function (v) {
-            return v.category === activeVideoFilter;
-          });
-    videoGrid.innerHTML = list.map(videoCard).join("");
-    videoGrid.querySelectorAll(".video-card").forEach(function (card) {
-      card.addEventListener("click", function () {
-        const id = card.getAttribute("data-vid");
-        const v = videos.find(function (x) {
-          return x.id === id;
-        });
-        if (v) openVideoModal(v);
+  function bindRowPreviewHover(container) {
+    if (!container) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    container.querySelectorAll(".project-row").forEach(function (row) {
+      const hit = row.querySelector(".project-row-hit");
+      const vid = row.querySelector("video.project-row-preview");
+      if (!hit) return;
+      row.addEventListener("mouseenter", function () {
+        hit.classList.add("is-hover-preview");
+        if (vid) vid.play().catch(function () {});
+      });
+      row.addEventListener("mouseleave", function () {
+        hit.classList.remove("is-hover-preview");
+        if (!vid) return;
+        vid.pause();
+        try {
+          vid.currentTime = 0;
+        } catch (e) {
+          /* ignore */
+        }
       });
     });
-    observeReveals(videoGrid);
+  }
+
+  function pauseCaseVideo() {
+    if (!caseMediaMain) return;
+    const vid = caseMediaMain.querySelector("video");
+    if (vid) vid.pause();
+  }
+
+  function renderCaseVideoPlayer(p) {
+    if (!caseMediaMain) return;
+    normalizeCaseMedia(p);
+    const cs = p.caseStudy || {};
+    const directVideo = resolveDirectVideoUrl(p, cs);
+    const poster = resolveMediaUrl(cs.videoPoster || p.posterUrl || "");
+    const external = resolveCaseExternalUrl(p, cs);
+    let mediaHtml = "";
+
+    if (directVideo) {
+      mediaHtml =
+        '<video class="case-video" controls playsinline preload="metadata" poster="' +
+        escapeHtml(poster) +
+        '">' +
+        '<source src="' +
+        escapeHtml(directVideo) +
+        '" type="video/mp4" />' +
+        "您的浏览器不支持视频播放。" +
+        "</video>";
+    } else {
+      mediaHtml =
+        '<div class="case-video-fallback">' +
+        '<img class="case-video-poster" src="' +
+        escapeHtml(poster) +
+        '" alt="' +
+        escapeHtml(p.title) +
+        '" loading="eager" decoding="async" draggable="false" />' +
+        (external
+          ? '<a class="case-video-play" href="' +
+            escapeHtml(external) +
+            '" target="_blank" rel="noopener noreferrer" aria-label="在新片场观看全片">' +
+            '<svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>' +
+            "</a>"
+          : "") +
+        "</div>";
+    }
+
+    caseMediaMain.innerHTML =
+      '<div class="case-media-vignette" aria-hidden="true"></div>' +
+      mediaHtml +
+      (external && directVideo
+        ? '<a class="case-media-watch btn btn-primary" href="' +
+          escapeHtml(external) +
+          '" target="_blank" rel="noopener noreferrer"><span>新片场观看全片</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></a>'
+        : external && !directVideo
+          ? '<span class="case-media-hint">点击播放按钮 · 新片场观看全片</span>'
+          : "");
+
+  }
+
+  function closeCaseStillLightbox() {
+    if (!caseStillLightbox) return;
+    caseStillLightbox.hidden = true;
+    caseStillLightbox.setAttribute("aria-hidden", "true");
+    if (caseStillLightboxImg) {
+      caseStillLightboxImg.removeAttribute("src");
+      caseStillLightboxImg.alt = "";
+    }
+    if (caseStillLightboxCaption) caseStillLightboxCaption.textContent = "";
+    activeCaseStillIndex = -1;
+    setActiveCaseStill(-1);
+  }
+
+  function openCaseStillLightbox(src, caption, index) {
+    if (!caseStillLightbox || !caseStillLightboxImg) return;
+    pauseCaseVideo();
+    caseStillLightboxImg.src = src;
+    caseStillLightboxImg.alt = caption;
+    caseStillLightboxImg.setAttribute("draggable", "false");
+    if (caseStillLightboxCaption) caseStillLightboxCaption.textContent = caption;
+    caseStillLightbox.hidden = false;
+    caseStillLightbox.setAttribute("aria-hidden", "false");
+    activeCaseStillIndex = index;
+    setActiveCaseStill(index);
+    if (caseStillLightboxClose) caseStillLightboxClose.focus();
+  }
+
+  function setActiveCaseStill(index) {
+    if (!caseGallery) return;
+    caseGallery.querySelectorAll(".case-still").forEach(function (btn, i) {
+      btn.classList.toggle("is-active", index >= 0 && i === index);
+    });
+  }
+
+  function renderCaseKicker(kicker) {
+    if (!caseIntroKicker) return;
+    const text = kicker || "Case Study";
+    caseIntroKicker.innerHTML =
+      '<span class="case-intro-kicker__dot" aria-hidden="true"></span>' +
+      escapeHtml(text);
+  }
+
+  function renderCaseMetaStrip(cs) {
+    if (!caseMetaStrip) return;
+    const meta = Array.isArray(cs.meta)
+      ? cs.meta.filter(function (item) {
+          return item && (item.label || item.value);
+        })
+      : [];
+    if (!meta.length) {
+      caseMetaStrip.innerHTML = "";
+      caseMetaStrip.hidden = true;
+      return;
+    }
+    caseMetaStrip.hidden = false;
+    caseMetaStrip.innerHTML = meta
+      .map(function (item) {
+        return (
+          '<div class="case-meta-item">' +
+          '<span class="case-meta-label">' +
+          escapeHtml(item.label || "") +
+          "</span>" +
+          '<span class="case-meta-value">' +
+          escapeHtml(item.value || "") +
+          "</span></div>"
+        );
+      })
+      .join("");
+  }
+
+  function renderCaseStillsGrid(p, gallery, aspect) {
+    if (!caseGallery || !gallery.length) return;
+    const cs = p.caseStudy || {};
+    const title = cs.title || p.title;
+    const isPortrait = String(aspect || cs.galleryAspect || "").trim() === "9:16";
+    const resolvedGallery = gallery.map(resolveMediaUrl).filter(Boolean);
+
+    caseGallery.classList.toggle("case-stills-grid--portrait-row", isPortrait);
+
+    caseGallery.innerHTML = resolvedGallery
+      .map(function (src, i) {
+        const num = String(i + 1).padStart(2, "0");
+        return (
+          '<button type="button" class="case-still" data-case-still="' +
+          i +
+          '" aria-label="放大预览剧照 ' +
+          num +
+          '">' +
+          '<img src="' +
+          escapeHtml(src) +
+          '" alt="' +
+          escapeHtml(title + " 剧照 " + num) +
+          '" loading="lazy" decoding="async" draggable="false" />' +
+          "</button>"
+        );
+      })
+      .join("");
+
+    caseGallery.querySelectorAll("img").forEach(function (img) {
+      bindBrokenImageFallback(img);
+      if (isPortrait && !img.complete) {
+        img.addEventListener(
+          "load",
+          function () {
+            scheduleCaseLayoutMetrics(p);
+          },
+          { once: true }
+        );
+      }
+    });
+
+    caseGallery.querySelectorAll("[data-case-still]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const index = Number(btn.getAttribute("data-case-still"));
+        if (!Number.isFinite(index) || !resolvedGallery[index]) return;
+        const num = String(index + 1).padStart(2, "0");
+        openCaseStillLightbox(
+          resolvedGallery[index],
+          (cs.title || p.title) + " · 剧照 " + num,
+          index
+        );
+      });
+    });
+  }
+
+  function renderCaseLayout(p) {
+    if (!caseLayout || !caseGallery || !caseBriefGrid) return;
+    const cs = p.caseStudy || {};
+    const gallery = Array.isArray(cs.gallery) ? cs.gallery.filter(Boolean) : [];
+    const displayGallery = gallery.length ? gallery : p.posterUrl ? [p.posterUrl] : [];
+    const cards = Array.isArray(cs.cards) ? cs.cards.slice(0, 4) : [];
+
+    caseLayout.hidden = false;
+    caseLayout.classList.toggle(
+      "case-layout--portrait",
+      String(cs.galleryAspect || "").trim() === "9:16"
+    );
+    if (caseIntroKicker) renderCaseKicker(cs.kicker);
+    if (caseIntroTitle) caseIntroTitle.textContent = cs.title || p.title;
+    if (caseIntroSubtitle) {
+      const subtitle = cs.titleEn || p.subtitle || "";
+      caseIntroSubtitle.textContent = subtitle;
+      caseIntroSubtitle.hidden = !subtitle;
+    }
+    if (caseIntroBody) caseIntroBody.textContent = cs.intro || p.long;
+    if (caseDecor) caseDecor.textContent = cs.decor || (cs.title || p.title || "C").charAt(0).toUpperCase();
+    closeCaseStillLightbox();
+    renderCaseVideoPlayer(p);
+    renderCaseMetaStrip(cs);
+
+    const stillsWrap = caseGallery ? caseGallery.closest(".case-stills-wrap") : null;
+    if (stillsWrap) {
+      stillsWrap.classList.remove("case-stills-wrap--landscape", "case-stills-wrap--portrait");
+      stillsWrap.classList.add(galleryAspectWrapClass(cs.galleryAspect));
+    }
+
+    renderCaseStillsGrid(p, displayGallery, cs.galleryAspect);
+
+    caseBriefGrid.innerHTML = cards
+      .map(function (card, index) {
+        return (
+          '<article class="case-brief-card" style="--case-card-i:' +
+          index +
+          '">' +
+          "<h5>" +
+          escapeHtml(card.title || "") +
+          "</h5>" +
+          "<p>" +
+          escapeHtml(card.body || "") +
+          "</p>" +
+          "</article>"
+        );
+      })
+      .join("");
+
+    scheduleCaseLayoutMetrics(p);
+  }
+
+  function resetCaseLayout() {
+    clearCaseLayoutMetrics();
+    closeCaseStillLightbox();
+    pauseCaseVideo();
+    if (caseLayout) caseLayout.hidden = true;
+    if (caseMediaMain) caseMediaMain.innerHTML = "";
+    if (caseGallery) caseGallery.innerHTML = "";
+    if (caseBriefGrid) caseBriefGrid.innerHTML = "";
+    if (caseMetaStrip) {
+      caseMetaStrip.innerHTML = "";
+      caseMetaStrip.hidden = true;
+    }
+    if (caseDecor) caseDecor.textContent = "";
+    if (caseIntroSubtitle) {
+      caseIntroSubtitle.textContent = "";
+      caseIntroSubtitle.hidden = false;
+    }
   }
 
   function openProjectModal(p) {
+    if (!projectModal || !modalTitle) return;
+    const rawEmbed = p.embedUrl && String(p.embedUrl).trim();
+    const external = p.externalUrl && String(p.externalUrl).trim();
+    const isXpcEmbed = rawEmbed && /xinpianchang\.com/i.test(rawEmbed);
+    const embed = isXpcEmbed ? "" : rawEmbed;
     modalTitle.textContent = p.title;
     modalText.innerHTML = "<p>" + escapeHtml(p.long) + "</p>";
-    modalPreview.style.background = p.gradient;
     modalTags.innerHTML = p.tags
       .map(function (t) {
         return '<span class="tag">' + escapeHtml(t) + "</span>";
       })
       .join("");
+
+    if (modalWatch) {
+      if (external && !p.caseStudy) {
+        modalWatch.href = external;
+        modalWatch.hidden = false;
+      } else {
+        modalWatch.removeAttribute("href");
+        modalWatch.hidden = true;
+      }
+    }
+
+    const useCaseLayout = !!p.caseStudy;
+    if (modalPanel) {
+      modalPanel.classList.toggle("modal--with-embed", !!embed && !useCaseLayout);
+      modalPanel.classList.toggle("modal--case", useCaseLayout);
+    }
+
+    if (useCaseLayout) {
+      renderCaseLayout(p);
+      if (modalEmbedWrap) {
+        modalEmbedWrap.innerHTML = "";
+        modalEmbedWrap.hidden = true;
+      }
+      if (modalPreview) modalPreview.hidden = true;
+      if (modalTags) {
+        modalTags.innerHTML = "";
+        modalTags.hidden = true;
+      }
+      if (modalText) modalText.hidden = true;
+      if (modalActions) modalActions.hidden = true;
+      if (modalTitle) modalTitle.textContent = (p.caseStudy && p.caseStudy.kicker) || p.title;
+    } else if (embed && modalEmbedWrap) {
+      resetCaseLayout();
+      modalEmbedWrap.innerHTML =
+        '<div class="modal-embed-frame">' +
+        '<iframe title="' +
+        escapeHtml(p.title) +
+        '" src="' +
+        escapeHtml(embed) +
+        '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>' +
+        "</div>";
+      modalEmbedWrap.hidden = false;
+      if (modalPreview) {
+        modalPreview.hidden = true;
+        modalPreview.style.background = "";
+      }
+      if (modalTags) modalTags.hidden = false;
+      if (modalText) modalText.hidden = false;
+      if (modalActions) modalActions.hidden = false;
+    } else {
+      resetCaseLayout();
+      if (modalEmbedWrap) {
+        modalEmbedWrap.innerHTML = "";
+        modalEmbedWrap.hidden = true;
+      }
+      if (modalPreview) {
+        modalPreview.hidden = false;
+        modalPreview.style.background = p.gradient;
+      }
+      if (modalTags) modalTags.hidden = false;
+      if (modalText) modalText.hidden = false;
+      if (modalActions) modalActions.hidden = false;
+    }
+
     projectModal.classList.add("is-open");
     projectModal.setAttribute("aria-hidden", "false");
     document.body.classList.add("modal-open");
-    modalClose.focus();
+    if (modalBody) modalBody.scrollTop = 0;
+    if (modalClose) modalClose.focus();
   }
 
   function closeProjectModal() {
+    if (!projectModal) return;
+    resetCaseLayout();
+    if (modalEmbedWrap) {
+      modalEmbedWrap.innerHTML = "";
+      modalEmbedWrap.hidden = true;
+    }
+    if (modalPreview) modalPreview.hidden = false;
+    if (modalTags) modalTags.hidden = false;
+    if (modalText) modalText.hidden = false;
+    if (modalActions) modalActions.hidden = false;
+    if (modalPanel) {
+      modalPanel.classList.remove("modal--with-embed");
+      modalPanel.classList.remove("modal--case");
+    }
     projectModal.classList.remove("is-open");
     projectModal.setAttribute("aria-hidden", "true");
-    if (!videoModal.classList.contains("is-open")) {
-      document.body.classList.remove("modal-open");
-    }
+    document.body.classList.remove("modal-open");
   }
 
-  function openVideoModal(v) {
-    videoModalTitle.textContent = v.title;
-    videoModalDesc.textContent = v.desc;
-    videoModalTags.innerHTML = v.tags
-      .map(function (t) {
-        return '<span class="tag">' + escapeHtml(t) + "</span>";
-      })
-      .join("");
-
-    if (v.embedUrl && v.embedUrl.trim()) {
-      videoFrameWrap.innerHTML =
-        '<div class="video-frame">' +
-        '<iframe title="' +
-        escapeHtml(v.title) +
-        '" src="' +
-        escapeHtml(v.embedUrl) +
-        '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>' +
-        "</div>";
-    } else {
-      videoFrameWrap.innerHTML =
-        '<div class="video-placeholder" role="status">暂未配置嵌入链接。请在 <strong>main.js</strong> 中找到该条目，填写 <code>embedUrl</code>（YouTube / Vimeo / Bilibili 播放器地址）。</div>';
-    }
-
-    videoModal.classList.add("is-open");
-    videoModal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
-    videoModalClose.focus();
+  if (modalClose) {
+    modalClose.addEventListener("click", closeProjectModal);
   }
-
-  function closeVideoModal() {
-    videoFrameWrap.innerHTML = "";
-    videoModal.classList.remove("is-open");
-    videoModal.setAttribute("aria-hidden", "true");
-    if (!projectModal.classList.contains("is-open")) {
-      document.body.classList.remove("modal-open");
-    }
+  if (projectModal) {
+    projectModal.addEventListener("click", function (e) {
+      if (e.target === projectModal) closeProjectModal();
+    });
   }
-
-  modalClose.addEventListener("click", closeProjectModal);
-  projectModal.addEventListener("click", function (e) {
-    if (e.target === projectModal) closeProjectModal();
-  });
-
-  videoModalClose.addEventListener("click", closeVideoModal);
-  videoModal.addEventListener("click", function (e) {
-    if (e.target === videoModal) closeVideoModal();
-  });
 
   document.addEventListener("keydown", function (e) {
     if (e.key !== "Escape") return;
-    if (videoModal.classList.contains("is-open")) closeVideoModal();
-    else if (projectModal.classList.contains("is-open")) closeProjectModal();
+    if (caseStillLightbox && !caseStillLightbox.hidden) {
+      closeCaseStillLightbox();
+      return;
+    }
+    if (projectModal && projectModal.classList.contains("is-open")) closeProjectModal();
   });
+
+  if (caseStillLightbox) {
+    caseStillLightbox.addEventListener("click", function (e) {
+      if (e.target === caseStillLightbox) closeCaseStillLightbox();
+    });
+  }
+  if (caseStillLightboxClose) {
+    caseStillLightboxClose.addEventListener("click", closeCaseStillLightbox);
+  }
+
+  function preventCaseContextMenu(e) {
+    e.preventDefault();
+  }
+
+  function preventCaseImageDrag(e) {
+    const target = e.target;
+    if (target && (target.tagName === "IMG" || target.tagName === "VIDEO")) {
+      e.preventDefault();
+    }
+  }
+
+  function onCaseModalContextMenu(e) {
+    if (!modalPanel || !modalPanel.classList.contains("modal--case")) return;
+    preventCaseContextMenu(e);
+  }
+
+  if (modalPanel) {
+    modalPanel.addEventListener("contextmenu", onCaseModalContextMenu);
+    modalPanel.addEventListener("dragstart", preventCaseImageDrag);
+    modalPanel.addEventListener(
+      "wheel",
+      function (e) {
+        if (!modalPanel.classList.contains("modal--case") || !modalBody) return;
+
+        const maxScroll = modalBody.scrollHeight - modalBody.clientHeight;
+        if (maxScroll <= 1) return;
+
+        const next = modalBody.scrollTop + e.deltaY;
+        const clamped = Math.max(0, Math.min(maxScroll, next));
+        if (clamped === modalBody.scrollTop) return;
+
+        modalBody.scrollTop = clamped;
+        e.preventDefault();
+      },
+      { passive: false, capture: true }
+    );
+  }
+  if (caseStillLightbox) {
+    caseStillLightbox.addEventListener("contextmenu", preventCaseContextMenu);
+    caseStillLightbox.addEventListener("dragstart", preventCaseImageDrag);
+  }
 
   let revealObserver;
   function observeReveals(container) {
+    if (!container) return;
     if (revealObserver) revealObserver.disconnect();
+    if (!window.IntersectionObserver) {
+      container.querySelectorAll(".reveal").forEach(function (el) {
+        el.classList.add("is-visible");
+      });
+      return;
+    }
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       container.querySelectorAll(".reveal").forEach(function (el) {
         el.classList.add("is-visible");
@@ -498,6 +1031,10 @@
       el.classList.add("is-visible");
       return;
     }
+    if (!window.IntersectionObserver) {
+      el.classList.add("is-visible");
+      return;
+    }
     var o = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
@@ -514,20 +1051,20 @@
 
   function setActiveNav() {
     var links = document.querySelectorAll(".nav-main a[href^='#']");
-    var sections = ["showreel", "work", "about", "contact"].map(function (id) {
+    var sections = ["about", "work", "services", "process", "contact"].map(function (id) {
       return document.getElementById(id);
     });
 
     function update() {
       var y = window.scrollY + 100;
-      var showreelEl = document.getElementById("showreel");
-      if (showreelEl && y + 48 < showreelEl.offsetTop) {
+      var aboutEl = document.getElementById("about");
+      if (aboutEl && y + 48 < aboutEl.offsetTop) {
         links.forEach(function (a) {
           a.removeAttribute("aria-current");
         });
         return;
       }
-      var current = "showreel";
+      var current = "about";
       sections.forEach(function (sec) {
         if (sec && sec.offsetTop <= y) current = sec.id;
       });
@@ -545,10 +1082,31 @@
     update();
   }
 
-  initTheme();
-  renderProjectFilters();
-  renderVideoFilters();
-  renderProjects();
-  renderVideos();
-  setActiveNav();
+  async function bootstrap() {
+    projects = await loadProjects();
+    initTheme();
+    renderProjectFilters();
+    renderProjects();
+    setActiveNav();
+  }
+
+  try {
+    bootstrap().catch(function (err) {
+      console.error("Portfolio 初始化失败:", err);
+      document.querySelectorAll(".reveal, .reveal-static").forEach(function (el) {
+        el.classList.add("is-visible");
+      });
+    });
+  } catch (err) {
+    console.error("Portfolio 脚本异常:", err);
+    document.querySelectorAll(".reveal, .reveal-static").forEach(function (el) {
+      el.classList.add("is-visible");
+    });
+  }
+
+  window.setTimeout(function () {
+    document.querySelectorAll(".reveal:not(.is-visible)").forEach(function (el) {
+      el.classList.add("is-visible");
+    });
+  }, 1200);
 })();
