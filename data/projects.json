@@ -11,7 +11,7 @@
     "desc": "2026款911 carrera创意广告短片",
     "long": "首个案例示例已替换为你提供的新片场作品入口。当前模板采用封面图 + 项目说明 + 弹窗外链跳转，先不改为胶囊形态。后续你只需要继续替换每个项目的封面、标题与链接即可。",
     "gradient": "linear-gradient(135deg, #0a0c1b 0%, #1f3f46 48%, #4fb39f 100%)",
-    "posterUrl": "public/images/project-1-cover.png",
+    "posterUrl": "public/images/project-1-cover.jpg",
     "previewVideoUrl": "",
     "embedUrl": "https://www.xinpianchang.com/a13724377?from=UserProfile",
     "externalUrl": "https://www.xinpianchang.com/a13724377?from=UserProfile",
@@ -22,7 +22,7 @@
       "decor": "风",
       "index": "01",
       "videoUrl": "",
-      "videoPoster": "public/images/project-1-cover.png",
+      "videoPoster": "public/images/project-1-cover.jpg",
       "intro": "本片以“Ride the Wind”为创意概念，通过AIGC技术构建完整的品牌视觉叙事。以绿宝石的稀有质感，隐喻 Porsche 911 Carrera 的经典设计语言，从静态线条展示到动态驰骋，从工业美学到自然风景，打造兼具奢华感、速度感与电影质感的品牌短片。全片聚焦光线、反射与运动轨迹，以现代广告影像语言重新诠释经典跑车的永恒魅力。",
       "meta": [
         {
@@ -43,15 +43,15 @@
         }
       ],
       "gallery": [
-        "public/images/project-1-still-01.png",
-        "public/images/project-1-still-02.png",
-        "public/images/project-1-still-03.png",
-        "public/images/project-1-still-04.png",
-        "public/images/project-1-still-05.png",
-        "public/images/project-1-still-06.png",
-        "public/images/project-1-still-07.png",
-        "public/images/project-1-still-08.png",
-        "public/images/project-1-still-09.png"
+        "public/images/project-1-still-01.jpg",
+        "public/images/project-1-still-02.jpg",
+        "public/images/project-1-still-03.jpg",
+        "public/images/project-1-still-04.jpg",
+        "public/images/project-1-still-05.jpg",
+        "public/images/project-1-still-06.jpg",
+        "public/images/project-1-still-07.jpg",
+        "public/images/project-1-still-08.jpg",
+        "public/images/project-1-still-09.jpg"
       ],
       "cards": [
         {
@@ -85,7 +85,7 @@
     "desc": "社媒宣发创意短片",
     "long": "多模型出图后统一色彩分级；风与布的动态用实拍素材混合生成补帧，避免塑料感。",
     "gradient": "linear-gradient(135deg, #101528 0%, #2a3868 50%, #ffaa33 100%)",
-    "posterUrl": "public/images/project-4-cover.png",
+    "posterUrl": "public/images/project-4-cover.jpg",
     "previewVideoUrl": "",
     "embedUrl": "",
     "caseStudy": {
@@ -94,7 +94,7 @@
       "titleEn": "",
       "decor": "",
       "videoUrl": "",
-      "videoPoster": "public/images/project-4-cover.png",
+      "videoPoster": "public/images/project-4-cover.jpg",
       "intro": "本案例为配合米其林复古盲盒的宣发，所制作的社媒宣发创意短片，以复古动画视觉元素展现米其林轮胎先生百年文化，复刻不同时期形象，实现1:1视觉还原，适配社媒传播。",
       "meta": [
         {
@@ -115,14 +115,14 @@
         }
       ],
       "gallery": [
-        "public/images/project-4-still-01.png",
-        "public/images/project-4-still-02.png",
-        "public/images/project-4-still-03.png",
-        "public/images/project-4-still-04.png",
-        "public/images/project-4-still-05.png",
-        "public/images/project-4-still-06.png",
-        "public/images/project-4-still-07.png",
-        "public/images/project-4-still-08.png"
+        "public/images/project-4-still-01.jpg",
+        "public/images/project-4-still-02.jpg",
+        "public/images/project-4-still-03.jpg",
+        "public/images/project-4-still-04.jpg",
+        "public/images/project-4-still-05.jpg",
+        "public/images/project-4-still-06.jpg",
+        "public/images/project-4-still-07.jpg",
+        "public/images/project-4-still-08.jpg"
       ],
       "cards": [
         {
@@ -157,7 +157,7 @@
     "desc": "2026华润·金陵天地（南京站）IP宣发片",
     "long": "音乐结构映射镜头重复与变形；AIGC 负责纹理与天空盒迭代，手工修补人物边缘与手持抖动。",
     "gradient": "linear-gradient(125deg, #0c1020 0%, #243060 46%, #ffb85e 100%)",
-    "posterUrl": "public/images/project-2-cover.png",
+    "posterUrl": "public/images/project-2-cover.jpg",
     "previewVideoUrl": "",
     "embedUrl": "https://player.vimeo.com/video/148751763",
     "caseStudy": {
@@ -167,7 +167,7 @@
       "decor": "",
       "index": "02",
       "videoUrl": "",
-      "videoPoster": "public/images/project-2-cover.png",
+      "videoPoster": "public/images/project-2-cover.jpg",
       "intro": "2026年HOCH汉堡节南京站IP活动推广，以卡通汉堡人IP为核心，结合南京地标，打造年轻受众节日氛围。AI结合实拍打造卡通化视觉风格，高效低成本推广，强化品牌记忆与传播。",
       "meta": [
         {
@@ -188,15 +188,15 @@
         }
       ],
       "gallery": [
-        "public/images/project-2-still-01.png",
-        "public/images/project-2-still-02.png",
-        "public/images/project-2-still-03.png",
-        "public/images/project-2-still-04.png",
-        "public/images/project-2-still-05.png",
-        "public/images/project-2-still-06.png",
-        "public/images/project-2-still-07.png",
-        "public/images/project-2-still-08.png",
-        "public/images/project-2-still-09.png"
+        "public/images/project-2-still-01.jpg",
+        "public/images/project-2-still-02.jpg",
+        "public/images/project-2-still-03.jpg",
+        "public/images/project-2-still-04.jpg",
+        "public/images/project-2-still-05.jpg",
+        "public/images/project-2-still-06.jpg",
+        "public/images/project-2-still-07.jpg",
+        "public/images/project-2-still-08.jpg",
+        "public/images/project-2-still-09.jpg"
       ],
       "cards": [
         {
@@ -231,7 +231,7 @@
     "desc": "智能电子日历跨境电商广告",
     "long": "循环点做交叉淡化；亮度按现场照度校准；提供工程版 ProRes 与 HAP 备选方案。",
     "gradient": "linear-gradient(135deg, #0c1020 0%, #243468 50%, #f0a040 100%)",
-    "posterUrl": "public/images/project-6-cover.png",
+    "posterUrl": "public/images/project-6-cover.jpg",
     "previewVideoUrl": "",
     "embedUrl": "",
     "caseStudy": {
@@ -240,7 +240,7 @@
       "titleEn": "智能电子日历海外广告",
       "decor": "",
       "videoUrl": "",
-      "videoPoster": "public/images/project-6-cover.png",
+      "videoPoster": "public/images/project-6-cover.jpg",
       "intro": "针对海外电商场景，本项目通过AI技术视觉呈现，强调产品便捷性与科技感。设计目标是以温馨家居为背景，展现智能电子日历的便捷性和多样化使用场景，省去场景、外模等，大幅节约实拍成本。",
       "meta": [
         {
@@ -261,15 +261,15 @@
         }
       ],
       "gallery": [
-        "public/images/project-6-still-01.png",
-        "public/images/project-6-still-03.png",
-        "public/images/project-6-still-02.png",
-        "public/images/project-6-still-04.png",
-        "public/images/project-6-still-09.png",
-        "public/images/project-6-still-08.png",
-        "public/images/project-6-still-07.png",
-        "public/images/project-6-still-06.png",
-        "public/images/project-6-still-05.png"
+        "public/images/project-6-still-01.jpg",
+        "public/images/project-6-still-03.jpg",
+        "public/images/project-6-still-02.jpg",
+        "public/images/project-6-still-04.jpg",
+        "public/images/project-6-still-09.jpg",
+        "public/images/project-6-still-08.jpg",
+        "public/images/project-6-still-07.jpg",
+        "public/images/project-6-still-06.jpg",
+        "public/images/project-6-still-05.jpg"
       ],
       "galleryAspect": "16:9",
       "cards": [
@@ -303,7 +303,7 @@
     "desc": "赛博武侠风实验片段",
     "long": "HDR 环境贴图与多通道输出；生成纹理与实拍底图在 Nuke 里对齐法线与高光，保证电商主图与竖版素材同源。",
     "gradient": "linear-gradient(145deg, #101528 0%, #2c3f78 44%, #ffb060 100%)",
-    "posterUrl": "public/images/project-7-cover.png",
+    "posterUrl": "public/images/project-7-cover.jpg",
     "previewVideoUrl": "",
     "embedUrl": "",
     "caseStudy": {
@@ -312,7 +312,7 @@
       "titleEn": "赛博武侠风实验片段",
       "decor": "",
       "videoUrl": "",
-      "videoPoster": "public/images/project-7-cover.png",
+      "videoPoster": "public/images/project-7-cover.jpg",
       "intro": "赛博武侠风格实验视频，融合传统服饰与科幻光剑，探索视觉风格碰撞，结合GPT2生成角色与分镜，呈现未来感与古典美并存的艺术效果。",
       "meta": [
         {
@@ -333,15 +333,15 @@
         }
       ],
       "gallery": [
-        "public/images/project-7-still-01.png",
-        "public/images/project-7-still-02.png",
-        "public/images/project-7-still-03.png",
-        "public/images/project-7-still-05.png",
-        "public/images/project-7-still-04.png",
-        "public/images/project-7-still-06.png",
-        "public/images/project-7-still-07.png",
-        "public/images/project-7-still-09.png",
-        "public/images/project-7-still-08.png"
+        "public/images/project-7-still-01.jpg",
+        "public/images/project-7-still-02.jpg",
+        "public/images/project-7-still-03.jpg",
+        "public/images/project-7-still-05.jpg",
+        "public/images/project-7-still-04.jpg",
+        "public/images/project-7-still-06.jpg",
+        "public/images/project-7-still-07.jpg",
+        "public/images/project-7-still-09.jpg",
+        "public/images/project-7-still-08.jpg"
       ],
       "galleryAspect": "16:9",
       "cards": [
@@ -376,7 +376,7 @@
     "desc": "Budweiser 啤酒新年创意短片",
     "long": "平台 A/B 测试两版片头；生成背景与 UI 录屏对齐安全区；输出含无字幕净版。",
     "gradient": "linear-gradient(135deg, #0a0c1b 0%, #1f2f5c 52%, #ff8c00 100%)",
-    "posterUrl": "public/images/project-5-cover.png",
+    "posterUrl": "public/images/project-5-cover.jpg",
     "previewVideoUrl": "",
     "embedUrl": "",
     "caseStudy": {
@@ -385,7 +385,7 @@
       "titleEn": "马上百威，马年有奔头",
       "decor": "",
       "videoUrl": "",
-      "videoPoster": "public/images/project-5-cover.png",
+      "videoPoster": "public/images/project-5-cover.jpg",
       "intro": "为Budweiser马年新年创意短片，以红色为主调，融合动感镜头，传递‘马上百威，马年有奔头’祝福，强化品牌喜庆形象。AIGC技术生成新年背景，实物复刻与多场景结合，动态镜头展现啤酒质感和品牌活力。",
       "meta": [
         {
@@ -408,11 +408,11 @@
       "gallery": [
         "public/images/project-5-still-01.jpeg",
         "public/images/project-5-still-02.jpeg",
-        "public/images/project-5-still-03.png",
+        "public/images/project-5-still-03.jpg",
         "public/images/project-5-still-04.jpeg",
-        "public/images/project-5-still-05.png",
-        "public/images/project-5-still-06.png",
-        "public/images/project-5-still-07.png",
+        "public/images/project-5-still-05.jpg",
+        "public/images/project-5-still-06.jpg",
+        "public/images/project-5-still-07.jpg",
         "public/images/project-5-still-08.jpeg",
         "public/images/project-5-still-09.jpeg"
       ],
@@ -449,7 +449,7 @@
     "desc": "奶粉电商广告视频",
     "long": "粒子系统与生成海洋素材分层合成；字幕安全区与播出版本字幕流单独导出。",
     "gradient": "linear-gradient(160deg, #0a0c1b 0%, #1e2d58 42%, #e8741a 100%)",
-    "posterUrl": "public/images/project-3-cover.png",
+    "posterUrl": "public/images/project-3-cover.jpg",
     "previewVideoUrl": "",
     "embedUrl": "",
     "externalUrl": "https://www.xinpianchang.com/a13724774?from=UserProfile",
@@ -459,7 +459,7 @@
       "titleEn": "",
       "decor": "",
       "videoUrl": "",
-      "videoPoster": "public/images/project-3-cover.png",
+      "videoPoster": "public/images/project-3-cover.jpg",
       "intro": "为欧恩贝奶粉新品上市，制作温馨家庭场景的AI电商广告。采用暖色调营造氛围，高效传递产品卖点，通过agent+seedance 2.0技术合成粒子海洋与产品素材，最终交付横版16:9成片",
       "meta": [
         {
@@ -480,15 +480,15 @@
         }
       ],
       "gallery": [
-        "public/images/project-3-still-01.png",
-        "public/images/project-3-still-02.png",
-        "public/images/project-3-still-03.png",
-        "public/images/project-3-still-04.png",
-        "public/images/project-3-still-05.png",
-        "public/images/project-3-still-06.png",
-        "public/images/project-3-still-07.png",
-        "public/images/project-3-still-08.png",
-        "public/images/project-3-still-09.png"
+        "public/images/project-3-still-01.jpg",
+        "public/images/project-3-still-02.jpg",
+        "public/images/project-3-still-03.jpg",
+        "public/images/project-3-still-04.jpg",
+        "public/images/project-3-still-05.jpg",
+        "public/images/project-3-still-06.jpg",
+        "public/images/project-3-still-07.jpg",
+        "public/images/project-3-still-08.jpg",
+        "public/images/project-3-still-09.jpg"
       ],
       "cards": [
         {
@@ -522,7 +522,7 @@
     "desc": "JNBY春夏装lookbook",
     "long": "用节点合成控制随机种子与节拍同步；导出多版供 VJ 与社交切片；保留工程文件便于后续改调色与画幅。",
     "gradient": "linear-gradient(135deg, #0a0c1b 0%, #223060 50%, #ff9a3c 100%)",
-    "posterUrl": "public/images/project-8-cover.png",
+    "posterUrl": "public/images/project-8-cover.jpg",
     "previewVideoUrl": "",
     "embedUrl": "",
     "caseStudy": {
@@ -531,7 +531,7 @@
       "titleEn": "JNBY春夏装lookbook",
       "decor": "",
       "videoUrl": "",
-      "videoPoster": "public/images/project-8-cover.png",
+      "videoPoster": "public/images/project-8-cover.jpg",
       "intro": "2026JNBY春夏出游服装lookbook，采用AI场景生成与实拍模特结合，呈现多元出游风格，轻松时尚。一周内完成策划、拍摄、后期，提供30组服装成片，满足电商及社交传播需求。",
       "meta": [
         {
@@ -552,14 +552,14 @@
         }
       ],
       "gallery": [
-        "public/images/project-8-still-01.png",
-        "public/images/project-8-still-02.png",
-        "public/images/project-8-still-03.png",
-        "public/images/project-8-still-04.png",
-        "public/images/project-8-still-05.png",
-        "public/images/project-8-still-06.png",
-        "public/images/project-8-still-07.png",
-        "public/images/project-8-still-08.png"
+        "public/images/project-8-still-01.jpg",
+        "public/images/project-8-still-02.jpg",
+        "public/images/project-8-still-03.jpg",
+        "public/images/project-8-still-04.jpg",
+        "public/images/project-8-still-05.jpg",
+        "public/images/project-8-still-06.jpg",
+        "public/images/project-8-still-07.jpg",
+        "public/images/project-8-still-08.jpg"
       ],
       "galleryAspect": "9:16",
       "cards": [
