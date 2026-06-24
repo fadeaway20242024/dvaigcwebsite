@@ -5,7 +5,7 @@
 
   const PROJECTS_STORAGE_KEY = "portfolio-projects-draft";
   const PROJECTS_JSON_URL = "data/projects.json";
-  const MEDIA_CACHE_VER = "20250623d";
+  const MEDIA_CACHE_VER = "20250625a";
 
   async function loadProjects() {
     const isLocalHost =
@@ -108,6 +108,7 @@
   let caseLayoutMetricsHandler = null;
   let caseLayoutMetricsProject = null;
   let caseLeftResizeObserver = null;
+  let caseStillLoadObserver = null;
 
   function isPortraitGallery(aspect) {
     return String(aspect || "").trim() === "9:16";
@@ -434,14 +435,74 @@
     return value + joiner + "v=" + MEDIA_CACHE_VER;
   }
 
+  function isMobileCaseViewport() {
+    return window.matchMedia("(max-width: 960px)").matches;
+  }
+
+  function stillThumbPath(fullPath) {
+    const value = String(fullPath || "").trim();
+    if (!value || /^(https?:|data:)/i.test(value)) return value;
+    return value.replace(/(\.jpe?g)(\?.*)?$/i, "-thumb$1");
+  }
+
+  function stillThumbUrl(fullPath) {
+    const thumb = stillThumbPath(fullPath);
+    return thumb ? resolveMediaUrl(thumb) : "";
+  }
+
+  function disconnectCaseStillLoadObserver() {
+    if (!caseStillLoadObserver) return;
+    caseStillLoadObserver.disconnect();
+    caseStillLoadObserver = null;
+  }
+
+  function bindDeferredCaseStillImages(container) {
+    disconnectCaseStillLoadObserver();
+    if (!container || typeof IntersectionObserver === "undefined") return;
+
+    const scrollRoot =
+      container.closest(".modal.modal--case") ||
+      container.closest(".modal-body") ||
+      null;
+
+    caseStillLoadObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          const img = entry.target;
+          const deferred = img.getAttribute("data-deferred-src");
+          if (deferred && !img.getAttribute("src")) img.src = deferred;
+          caseStillLoadObserver.unobserve(img);
+        });
+      },
+      {
+        root: scrollRoot,
+        rootMargin: "160px 0px",
+        threshold: 0.01,
+      }
+    );
+
+    container.querySelectorAll("img[data-deferred-src]").forEach(function (img) {
+      caseStillLoadObserver.observe(img);
+    });
+  }
+
   function bindBrokenImageFallback(img) {
     if (!img || img.dataset.fallbackBound === "1") return;
     img.dataset.fallbackBound = "1";
     img.addEventListener("error", function () {
+      const full = img.getAttribute("data-full-src");
+      if (full && img.dataset.fallbackFull !== "1") {
+        img.dataset.fallbackFull = "1";
+        img.removeAttribute("data-deferred-src");
+        img.src = full;
+        return;
+      }
       const still = img.closest(".case-still");
       if (!still) return;
       still.classList.add("is-broken");
       img.removeAttribute("src");
+      img.removeAttribute("data-deferred-src");
     });
   }
 
@@ -700,20 +761,32 @@
     const title = cs.title || p.title;
     const isPortrait = String(aspect || cs.galleryAspect || "").trim() === "9:16";
     const resolvedGallery = gallery.map(resolveMediaUrl).filter(Boolean);
+    const useMobileOptim = isPortrait && isMobileCaseViewport();
+    const eagerCount = useMobileOptim ? 2 : resolvedGallery.length;
 
+    disconnectCaseStillLoadObserver();
     caseGallery.classList.toggle("case-stills-grid--portrait-row", isPortrait);
 
     caseGallery.innerHTML = resolvedGallery
       .map(function (src, i) {
         const num = String(i + 1).padStart(2, "0");
+        const fullSrc = src;
+        const thumbSrc = stillThumbUrl(gallery[i]) || fullSrc;
+        const deferLoad = useMobileOptim && i >= eagerCount;
+        const srcAttr = deferLoad
+          ? 'data-deferred-src="' + escapeHtml(thumbSrc) + '"'
+          : 'src="' + escapeHtml(thumbSrc) + '"';
+
         return (
           '<button type="button" class="case-still" data-case-still="' +
           i +
           '" aria-label="放大预览剧照 ' +
           num +
           '">' +
-          '<img src="' +
-          escapeHtml(src) +
+          "<img " +
+          srcAttr +
+          ' data-full-src="' +
+          escapeHtml(fullSrc) +
           '" alt="' +
           escapeHtml(title + " 剧照 " + num) +
           '" loading="lazy" decoding="async" draggable="false" />' +
@@ -724,7 +797,7 @@
 
     caseGallery.querySelectorAll("img").forEach(function (img) {
       bindBrokenImageFallback(img);
-      if (isPortrait && !img.complete) {
+      if (isPortrait && !useMobileOptim && !img.complete) {
         img.addEventListener(
           "load",
           function () {
@@ -734,6 +807,8 @@
         );
       }
     });
+
+    if (useMobileOptim) bindDeferredCaseStillImages(caseGallery);
 
     caseGallery.querySelectorAll("[data-case-still]").forEach(function (btn) {
       btn.addEventListener("click", function () {
@@ -907,6 +982,7 @@
 
   function closeProjectModal() {
     if (!projectModal) return;
+    disconnectCaseStillLoadObserver();
     resetCaseLayout();
     if (modalEmbedWrap) {
       modalEmbedWrap.innerHTML = "";

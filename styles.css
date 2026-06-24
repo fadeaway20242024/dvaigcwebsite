@@ -4148,6 +4148,18 @@ p.section-heading-en.blur-text-host {
     aspect-ratio: unset;
   }
 
+  .modal.modal--case .case-stills-grid.case-stills-grid--portrait-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    gap: 6px;
+  }
+
+  .modal.modal--case .case-stills-grid.case-stills-grid--portrait-row .case-still {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 16;
+  }
+
   .case-right {
     height: auto;
     align-self: start;
