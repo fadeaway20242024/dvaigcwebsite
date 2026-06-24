@@ -333,7 +333,7 @@
     { id: "ai-short", label: "AI短片" },
     { id: "ai-ecommerce", label: "AI电商" },
     { id: "ai-live-action", label: "AI+实拍" },
-    { id: "style-experiment", label: "风格实验" },
+    { id: "style-experiment", label: "视觉探索" },
   ];
 
   let activeFilter = "all";
